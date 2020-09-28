@@ -1,5 +1,6 @@
 ﻿using System;
 
+//Written by Spencer Johnson
 namespace Project_3_ConsoleInput
 {
     class Program
