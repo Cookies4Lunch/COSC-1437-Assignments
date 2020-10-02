@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerAndInventory", "CustomerAndInventory\CustomerAndInventory.csproj", "{A5B5FACA-204B-403D-B3C7-FF536BFEB6CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerAndInventory_Tests", "CustomerAndInventory_Tests\CustomerAndInventory_Tests.csproj", "{CBCE905A-8E34-48C8-84C4-B21EF1896E24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerAndInventory_Tests", "CustomerAndInventory_Tests\CustomerAndInventory_Tests.csproj", "{CBCE905A-8E34-48C8-84C4-B21EF1896E24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

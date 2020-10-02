@@ -103,6 +103,7 @@ namespace CustomerAndInventory_Tests
             customer.ID = tempID;
             order.CustomerID = customer.ID;
 
+            Assert.AreEqual(tempID, customer.ID);
             Assert.AreEqual(customer.ID, order.CustomerID);
         }
     }
