@@ -7,10 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeometricShapes", "Geometri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometricShapes_Tests", "GeometricShapes_Tests\GeometricShapes_Tests\GeometricShapes_Tests.csproj", "{55EC7C6B-8368-4E7F-85EC-730F04BE8B71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreLibrary", "CoreLibrary\CoreLibrary.csproj", "{6AE60E2C-BDEA-4A11-AE75-2D76912F943C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreLibrary_Tests", "CoreLibrary_Tests\CoreLibrary_Tests.csproj", "{3D338931-70D0-4740-9803-16FC32CDC7F4}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,14 +21,6 @@ Global
 		{55EC7C6B-8368-4E7F-85EC-730F04BE8B71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55EC7C6B-8368-4E7F-85EC-730F04BE8B71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55EC7C6B-8368-4E7F-85EC-730F04BE8B71}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6AE60E2C-BDEA-4A11-AE75-2D76912F943C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6AE60E2C-BDEA-4A11-AE75-2D76912F943C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6AE60E2C-BDEA-4A11-AE75-2D76912F943C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6AE60E2C-BDEA-4A11-AE75-2D76912F943C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3D338931-70D0-4740-9803-16FC32CDC7F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3D338931-70D0-4740-9803-16FC32CDC7F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3D338931-70D0-4740-9803-16FC32CDC7F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3D338931-70D0-4740-9803-16FC32CDC7F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
