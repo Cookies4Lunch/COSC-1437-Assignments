@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPlayerName = new System.Windows.Forms.TextBox();
             this.btnStartNewGame = new System.Windows.Forms.Button();
             this.btnGoComputer = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -44,13 +44,15 @@
             this.btnCell22 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtPlayerName
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 13);
-            this.textBox1.MaxLength = 25;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(223, 23);
-            this.textBox1.TabIndex = 0;
+            this.txtPlayerName.Location = new System.Drawing.Point(13, 13);
+            this.txtPlayerName.MaxLength = 25;
+            this.txtPlayerName.Name = "txtPlayerName";
+            this.txtPlayerName.Size = new System.Drawing.Size(223, 23);
+            this.txtPlayerName.TabIndex = 0;
+            this.txtPlayerName.TextChanged += new System.EventHandler(this.txtPlayerName_TextChanges);
+            this.txtPlayerName.VisibleChanged += new System.EventHandler(this.txtPlayerName_Validated);
             // 
             // btnStartNewGame
             // 
@@ -60,6 +62,7 @@
             this.btnStartNewGame.TabIndex = 1;
             this.btnStartNewGame.Text = "Start New Game";
             this.btnStartNewGame.UseVisualStyleBackColor = true;
+            this.btnStartNewGame.Click += new System.EventHandler(this.btnStartNewGame_Click);
             // 
             // btnGoComputer
             // 
@@ -69,6 +72,7 @@
             this.btnGoComputer.TabIndex = 2;
             this.btnGoComputer.Text = "GO! Computer";
             this.btnGoComputer.UseVisualStyleBackColor = true;
+            this.btnGoComputer.Click += new System.EventHandler(this.btnGoComputer_Click);
             // 
             // btnExit
             // 
@@ -99,6 +103,7 @@
             this.btnCell00.TabIndex = 5;
             this.btnCell00.Text = "?";
             this.btnCell00.UseVisualStyleBackColor = true;
+            this.btnCell00.Click += new System.EventHandler(this.btnCell00_Click);
             // 
             // btnCell01
             // 
@@ -109,6 +114,7 @@
             this.btnCell01.TabIndex = 5;
             this.btnCell01.Text = "?";
             this.btnCell01.UseVisualStyleBackColor = true;
+            this.btnCell01.Click += new System.EventHandler(this.btnCell01_Click);
             // 
             // btnCell02
             // 
@@ -119,6 +125,7 @@
             this.btnCell02.TabIndex = 5;
             this.btnCell02.Text = "?";
             this.btnCell02.UseVisualStyleBackColor = true;
+            this.btnCell02.Click += new System.EventHandler(this.btnCell02_Click);
             // 
             // btnCell10
             // 
@@ -129,6 +136,7 @@
             this.btnCell10.TabIndex = 5;
             this.btnCell10.Text = "?";
             this.btnCell10.UseVisualStyleBackColor = true;
+            this.btnCell10.Click += new System.EventHandler(this.btnCell10_Click);
             // 
             // btnCell11
             // 
@@ -139,6 +147,7 @@
             this.btnCell11.TabIndex = 5;
             this.btnCell11.Text = "?";
             this.btnCell11.UseVisualStyleBackColor = true;
+            this.btnCell11.Click += new System.EventHandler(this.btnCell11_Click);
             // 
             // btnCell12
             // 
@@ -149,6 +158,7 @@
             this.btnCell12.TabIndex = 5;
             this.btnCell12.Text = "?";
             this.btnCell12.UseVisualStyleBackColor = true;
+            this.btnCell12.Click += new System.EventHandler(this.btnCell12_Click);
             // 
             // btnCell20
             // 
@@ -159,6 +169,7 @@
             this.btnCell20.TabIndex = 5;
             this.btnCell20.Text = "?";
             this.btnCell20.UseVisualStyleBackColor = true;
+            this.btnCell20.Click += new System.EventHandler(this.btnCell20_Click);
             // 
             // btnCell21
             // 
@@ -169,6 +180,7 @@
             this.btnCell21.TabIndex = 5;
             this.btnCell21.Text = "?";
             this.btnCell21.UseVisualStyleBackColor = true;
+            this.btnCell21.Click += new System.EventHandler(this.btnCell21_Click);
             // 
             // btnCell22
             // 
@@ -179,6 +191,7 @@
             this.btnCell22.TabIndex = 5;
             this.btnCell22.Text = "?";
             this.btnCell22.UseVisualStyleBackColor = true;
+            this.btnCell22.Click += new System.EventHandler(this.btnCell22_Click);
             // 
             // MainForm
             // 
@@ -200,7 +213,7 @@
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnGoComputer);
             this.Controls.Add(this.btnStartNewGame);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPlayerName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -213,7 +226,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPlayerName;
         private System.Windows.Forms.Button btnStartNewGame;
         private System.Windows.Forms.Button btnGoComputer;
         private System.Windows.Forms.Button btnExit;
