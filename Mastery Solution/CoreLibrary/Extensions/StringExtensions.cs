@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
+/// <summary>
+/// Written by Spencer Johnson
+/// </summary>
+
 namespace CoreLibrary.Extensions
 {
     public static class StringExtensions

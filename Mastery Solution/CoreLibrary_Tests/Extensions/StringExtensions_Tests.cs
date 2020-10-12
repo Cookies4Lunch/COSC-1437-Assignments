@@ -10,7 +10,7 @@ using Shouldly;
 namespace CoreLibrary_Tests
 {
     [TestClass]
-    class StringExtensions_Tests
+    public class StringExtensions_Tests
     {
         #region IsNullOrEmpty
 

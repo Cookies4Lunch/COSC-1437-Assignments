@@ -5,6 +5,8 @@ using GeometricShapes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
+//Written by Spencer Johnson
+
 namespace GeometricShapes_Tests
 {
     [TestClass]

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
+//Written by Spencer Johnson
+
 namespace GeometricShapes
 {
     public class Square

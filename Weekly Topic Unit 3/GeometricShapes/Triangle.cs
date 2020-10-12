@@ -1,5 +1,7 @@
 ﻿using System;
 
+//Written by Spencer Johnson
+
 namespace GeometricShapes
 {
     public class Triangle : IGeometricShapes
