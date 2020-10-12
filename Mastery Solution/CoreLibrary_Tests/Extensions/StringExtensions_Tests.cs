@@ -7,6 +7,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 
+
+//Written by Spencer Johnson
+
+
 namespace CoreLibrary_Tests
 {
     [TestClass]
@@ -163,3 +167,5 @@ namespace CoreLibrary_Tests
 
     }
 }
+
+

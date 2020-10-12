@@ -1,4 +1,8 @@
 ﻿namespace Main_Application
+
+//Written by Spencer Johnson
+
+
 {
     partial class Form1
     {

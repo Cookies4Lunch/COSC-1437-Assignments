@@ -1,5 +1,7 @@
 ﻿using System;
 
+//Written by Spencer Johnson
+
 namespace Business_Layer_CSharp
 {
     /// <summary>

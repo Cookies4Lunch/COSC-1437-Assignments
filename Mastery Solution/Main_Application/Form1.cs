@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//Written by Spencer Johnson
+
 namespace Main_Application
 {
     public partial class Form1 : Form

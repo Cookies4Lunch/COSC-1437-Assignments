@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-/// <summary>
-/// Written by Spencer Johnson
-/// </summary>
+//Written by Spencer Johnson
 
 namespace CoreLibrary.Extensions
 {
