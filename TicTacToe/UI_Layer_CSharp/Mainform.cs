@@ -36,15 +36,16 @@ namespace UI_Layer_CSharp
 
             btnStartNewGame.Enabled = PlayerNameIsValid;
             btnGoComputer.Enabled = PlayerNameIsValid;
-            btnCell00.Enabled = PlayerNameIsValid;
-            btnCell01.Enabled = PlayerNameIsValid;
-            btnCell02.Enabled = PlayerNameIsValid;
-            btnCell10.Enabled = PlayerNameIsValid;
-            btnCell11.Enabled = PlayerNameIsValid;
-            btnCell12.Enabled = PlayerNameIsValid;
-            btnCell20.Enabled = PlayerNameIsValid;
-            btnCell21.Enabled = PlayerNameIsValid;
-            btnCell22.Enabled = PlayerNameIsValid;
+            //btnCell00.Enabled = PlayerNameIsValid;
+            //btnCell01.Enabled = PlayerNameIsValid;
+            //btnCell02.Enabled = PlayerNameIsValid;
+            //btnCell10.Enabled = PlayerNameIsValid;
+            //btnCell11.Enabled = PlayerNameIsValid;
+            //btnCell12.Enabled = PlayerNameIsValid;
+            //btnCell20.Enabled = PlayerNameIsValid;
+            //btnCell21.Enabled = PlayerNameIsValid;
+            //btnCell22.Enabled = PlayerNameIsValid;
+            panel1.Enabled = PlayerNameIsValid;
             
 
             // as the content changes. this event will trigger as each character changes

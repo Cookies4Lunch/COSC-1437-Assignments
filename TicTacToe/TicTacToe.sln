@@ -10,7 +10,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI_Layer_CSharp", "UI_Layer_CSharp\UI_Layer_CSharp.csproj", "{E100A32B-4BE7-455C-8ED8-97F5F73ECE67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business_Layer_CSharp", "Business_Layer_CSharp\Business_Layer_CSharp.csproj", "{43708E7C-072F-4CFD-8FA6-FE1CFD97BDD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business_Layer_CSharp", "Business_Layer_CSharp\Business_Layer_CSharp.csproj", "{43708E7C-072F-4CFD-8FA6-FE1CFD97BDD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToe_Interfaces", "TicTacToe_Interfaces\TicTacToe_Interfaces.csproj", "{E6ED4C6F-2FCD-4013-8858-EED352ECE3C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +28,10 @@ Global
 		{43708E7C-072F-4CFD-8FA6-FE1CFD97BDD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43708E7C-072F-4CFD-8FA6-FE1CFD97BDD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43708E7C-072F-4CFD-8FA6-FE1CFD97BDD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6ED4C6F-2FCD-4013-8858-EED352ECE3C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6ED4C6F-2FCD-4013-8858-EED352ECE3C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6ED4C6F-2FCD-4013-8858-EED352ECE3C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6ED4C6F-2FCD-4013-8858-EED352ECE3C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
