@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TicTacToe_Interfaces;
+﻿using TicTacToe_Interfaces;
+using CellOwners = Middle_Tier.CellOwners;
 
 //Written by Spencer Johnson
 
-namespace Business_Layer_CSharp
+namespace Middle_Tier
 {
     public class TicTacToeCell : ITicTacToeCell
     {
