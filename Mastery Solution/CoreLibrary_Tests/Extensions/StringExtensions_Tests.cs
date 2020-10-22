@@ -28,7 +28,9 @@ namespace CoreLibrary_Tests
         [DataRow("Spencer Johnson", false)]
         public void IsNullOrEmpty_Test(string content, bool expectedResult)
         {
-            content.IsNullOrEmpty().ShouldBe(expectedResult);  
+            var actualResult = content.IsNullOrEmpty();
+            
+            actualResult.ShouldBe(expectedResult);  
         }
 
 
@@ -64,7 +66,9 @@ namespace CoreLibrary_Tests
         [DataRow("Spencer Johnson", false)]
         public void IsNullOrWhiteSpace_Test(string content, bool expectedResult)
         {
-            content.IsNullOrEmpty().ShouldBe(expectedResult);
+            var actualResult = content.IsNullOrWhiteSpace();
+
+            actualResult.ShouldBe(expectedResult);
         }
 
         /*
@@ -106,7 +110,7 @@ namespace CoreLibrary_Tests
         [DataTestMethod]
         [DataRow("Spencer Johnson", 8, "Spencer ")]
         [DataRow("Spencer Johnson", 99, "Spencer Johnson")]
-        [DataRow("Spencer Johnson", 0, "0")]
+        [DataRow("Spencer Johnson", 0, "")]
         [DataRow(null, 0, null)]
         public void Left_Test (string testCondition, int numCharacters, string expectedResult)
         {
@@ -165,7 +169,7 @@ namespace CoreLibrary_Tests
         [DataTestMethod]
         [DataRow("Spencer Johnson", 8, " Johnson")]
         [DataRow("Spencer Johnson", 99, "Spencer Johnson")]
-        [DataRow("Spencer Johnson", 0, "0")]
+        [DataRow("Spencer Johnson", 0, "")]
         [DataRow(null, 0, null)]
         public void Right_Test(string testCondition, int numCharacters, string expectedResult)
         {
