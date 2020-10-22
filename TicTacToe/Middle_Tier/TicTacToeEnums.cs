@@ -1,8 +1,8 @@
-﻿using System;
+﻿
 
 //Written by Spencer Johnson
 
-namespace Business_Layer_CSharp
+namespace Middle_Tier
 {
     /// <summary>
     /// CellOwners is the set of possible Cell statuses

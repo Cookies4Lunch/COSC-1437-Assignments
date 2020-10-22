@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace UI_Layer_CSharp
+namespace Presentation_Tier
 {
     partial class AboutBox1 : Form
     {
