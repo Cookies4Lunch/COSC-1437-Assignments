@@ -11,7 +11,7 @@ namespace Business_Layer_CSharp
     {
         public string PlayerName { get; set; } = "The Human";
 
-        public CellOwners IdentifyCellOwners(int CellRow, int CellCol)
+        public CellOwners IdentifyCellOwner(int CellRow, int CellCol)
         {
             throw new NotImplementedException();
         }
