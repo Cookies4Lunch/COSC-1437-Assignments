@@ -24,5 +24,26 @@ namespace WPF_Application
         {
             InitializeComponent();
         }
+
+        private void BtnFaultDemonstration1_Click(object sender, RoutedEventArgs e)
+        {
+            var aStringWithCharacters = "123x";
+            var theIntValueOfTheString = Convert.ToInt32(aStringWithCharacters);
+            MessageBox.Show("This point cannot be reached.");
+        }
+
+        private void BtnFaultDemonstration2_Click(object sender, RoutedEventArgs e)
+        {
+            var aStringWithCharacters = "123.4";
+            var theIntValueOfTheString = Convert.ToInt32(aStringWithCharacters);
+            MessageBox.Show("This point cannot be reached.");
+        }
+
+        private void BtnFaultDemonstration3_Click(object sender, RoutedEventArgs e)
+        {
+            var aStringWithCharacters = "5000000000";
+            var theIntValueOfTheString = Convert.ToInt32(aStringWithCharacters);
+            MessageBox.Show("This point cannot be reached.");
+        }
     }
 }

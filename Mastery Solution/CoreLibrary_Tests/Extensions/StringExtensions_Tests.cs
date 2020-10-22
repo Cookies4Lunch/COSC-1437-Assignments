@@ -18,7 +18,21 @@ namespace CoreLibrary_Tests
     public class StringExtensions_Tests
     {
         #region IsNullOrEmpty
+        
+        
 
+        [DataTestMethod]
+        [DataRow("", true)]
+        [DataRow(" ", false)]
+        [DataRow(null, true)]
+        [DataRow("Spencer Johnson", false)]
+        public void IsNullOrEmpty_Test(string content, bool expectedResult)
+        {
+            content.IsNullOrEmpty().ShouldBe(expectedResult);  
+        }
+
+
+        /*
         [TestMethod]
         public void IsNullOrEmpty_IsNull()
         {
@@ -36,13 +50,24 @@ namespace CoreLibrary_Tests
 
             testCondition.ShouldBeEmpty();
         }
-
+        */
         #endregion
 
 
 
         #region IsNullorWhiteSpace
 
+        [DataTestMethod]
+        [DataRow("", true)]
+        [DataRow(" ", true)]
+        [DataRow(null, true)]
+        [DataRow("Spencer Johnson", false)]
+        public void IsNullOrWhiteSpace_Test(string content, bool expectedResult)
+        {
+            content.IsNullOrEmpty().ShouldBe(expectedResult);
+        }
+
+        /*
         [TestMethod]
         public void IsNullOrWhiteSpace_IsNull()
         {
@@ -72,11 +97,25 @@ namespace CoreLibrary_Tests
 
             actualResult.ShouldBeTrue();
         }
+        */
 
         #endregion
 
         #region Left
 
+        [DataTestMethod]
+        [DataRow("Spencer Johnson", 8, "Spencer ")]
+        [DataRow("Spencer Johnson", 99, "Spencer Johnson")]
+        [DataRow("Spencer Johnson", 0, "0")]
+        [DataRow(null, 0, null)]
+        public void Left_Test (string testCondition, int numCharacters, string expectedResult)
+        {
+            var actualResult = testCondition.Left(numCharacters);
+
+            actualResult.ShouldBe(expectedResult);
+        }
+
+        /*
         [TestMethod]
         public void Left_Normal()
         {
@@ -117,11 +156,25 @@ namespace CoreLibrary_Tests
 
             actualResult.Length.ShouldBe(3);
         }
+        */
 
         #endregion
 
         #region Right
 
+        [DataTestMethod]
+        [DataRow("Spencer Johnson", 8, " Johnson")]
+        [DataRow("Spencer Johnson", 99, "Spencer Johnson")]
+        [DataRow("Spencer Johnson", 0, "0")]
+        [DataRow(null, 0, null)]
+        public void Right_Test(string testCondition, int numCharacters, string expectedResult)
+        {
+            var actualResult = testCondition.Right(numCharacters);
+
+            actualResult.ShouldBe(expectedResult);
+        }
+
+        /*
         [TestMethod]
         public void Right_Normal()
         {
@@ -162,6 +215,7 @@ namespace CoreLibrary_Tests
 
             actualResult.Length.ShouldBe(3);
         }
+        */
 
         #endregion
 

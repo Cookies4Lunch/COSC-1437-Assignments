@@ -16,11 +16,33 @@
             <RowDefinition Height="1*"/>
             <!--1st Row-->
             <RowDefinition Height="1*"/>
+            <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Background="Blue"/>
         <Border Grid.Row="0" Grid.Column="1" Background="White"/>
         <Border Grid.Row="1" Grid.Column="1" Background="Red"/>
         <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
                Margin="30,30,30,30" Stretch="Uniform" Source="/star.png"/>
+        <Canvas Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Background="LightGray">
+            
+        
+        <Button x:Name="BtnFaultDemonstration1" Content="Fault Demonstration 1" 
+                    HorizontalAlignment="Left"  VerticalAlignment="Center" 
+                    Height="30" Width="230" 
+                    Grid.Row="2" 
+                    FontFamily="Comic Sans MS" FontSize="15" 
+                    Click="BtnFaultDemonstration1_Click"/>
+        <Button x:Name="BtnFaultDemonstration2" Content="Fault Demonstration 2" 
+                HorizontalAlignment="Left" VerticalAlignment="Center" 
+                Margin="235,0,0,0" Grid.Row="2"  Grid.ColumnSpan="2" 
+                Height="30" Width="230"
+                FontFamily="Comic Sans MS" FontSize="15" Click="BtnFaultDemonstration2_Click"/>
+        <Button x:Name="BtnFaultDemonstration3" Content="Fault Demonstration 3" 
+                HorizontalAlignment="Left" VerticalAlignment="Center" 
+                Margin="470,0,0,0" 
+                Height="30" Width="230"
+                FontFamily="Comic Sans MS" FontSize="15" Click="BtnFaultDemonstration3_Click"/>
+        </Canvas>
+
     </Grid>
 </Window>
