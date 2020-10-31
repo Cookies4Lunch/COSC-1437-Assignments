@@ -1,6 +1,6 @@
 ﻿namespace Presentation_Tier
 {
-    partial class MainForm
+    public partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.

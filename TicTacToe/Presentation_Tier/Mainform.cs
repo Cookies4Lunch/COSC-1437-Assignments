@@ -5,6 +5,7 @@ namespace Presentation_Tier
 {
     public partial class MainForm : Form
     {
+        private Middle_Tier.TicTacToeGame ticTacToeGame = new Middle_Tier.TicTacToeGame();
         public MainForm()
         {
             InitializeComponent();
@@ -52,56 +53,72 @@ namespace Presentation_Tier
         private void btnStartNewGame_Click(object sender, EventArgs e)
         {
             // when button is clicked, this event is triggered, causing game to start over
+            //MessageBox.Show("btnStartNewGame", "Button Click!");
+
+            var btn = item as Button; 
+            if (btn != null) 
+            { 
+                btn.Text = "?"; 
+            }
         }
 
         private void btnGoComputer_Click(object sender, EventArgs e)
         {
             // when button is clicked, the computer takes its turn
+
+            //MessageBox.Show("btnGoComputer", "Button Click!");
+
+            _ticTacToeGame.AutoPlayComputer();
+
+            if (_ticTacToeGame.CheckForWinner())
+            {
+                MessageBox.Show("Winner!");
+            }
         }
 
         private void btnCell00_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("btnCell00", "Button Click!");
         }
 
         private void btnCell01_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("btnCell01", "Button Click!");
         }
 
         private void btnCell02_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("btnCell02", "Button Click!");
         }
 
         private void btnCell10_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("btnCell10", "Button Click!");
         }
 
         private void btnCell11_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("btnCell11", "Button Click!");
         }
 
         private void btnCell12_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("btnCell12", "Button Click!");
         }
 
         private void btnCell20_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("btnCell20", "Button Click!");
         }
 
         private void btnCell21_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("btnCell21", "Button Click!");
         }
 
         private void btnCell22_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("btnCell22", "Button Click!");
         }
 
         
