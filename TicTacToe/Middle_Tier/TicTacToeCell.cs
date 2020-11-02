@@ -1,5 +1,5 @@
 ﻿using TicTacToe_Interfaces;
-using CellOwners = Middle_Tier.CellOwners;
+
 
 //Written by Spencer Johnson
 

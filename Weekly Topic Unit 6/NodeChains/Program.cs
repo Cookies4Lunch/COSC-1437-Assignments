@@ -38,7 +38,8 @@ namespace NodeChains
             //    +-----+------+    +-----+------+
             //    |  3  | null +    |  5  | null +
             //    +-----+------+    +-----+------+
-
+            Debug.WriteLine($"\nnode #1: Value = {first.Value}, Next node = {first.Next}");
+            Debug.WriteLine($"\nnode #2: Value = {second.Value}, Next node = {second.Next}");
 
             /*
              * similarly, the second node points to the third, but the third points nowhere
@@ -48,14 +49,17 @@ namespace NodeChains
             //    +-----+------+    +-----+------+   +-----+------+
             //    |  3  |  *---+--->|  5  |  *---+-->|  7  | null +
             //    +-----+------+    +-----+------+   +-----+------+
-
+            Debug.WriteLine($"\nnode #3: Value = {third.Value}, Next node = {third.Next}");
 
             Node fourth = new Node { Value = 4444 };
             third.Next = fourth;
 
+            Debug.WriteLine($"\nnode #4: Value = {fourth.Value}, Next node = {fourth.Next}");
 
             Node fifth = new Node { Value = 55555 };
             fourth.Next = fifth;
+
+            Debug.WriteLine($"\nnode #5: Value = {fifth.Value}, Next node = {fifth.Next}");
 
             var r = new Random();
             var workingNode = fifth; 
@@ -63,10 +67,17 @@ namespace NodeChains
             { 
                 var newRandomValue = r.Next(100, 200);
 
-                workingNode.Next = new Node();
+                workingNode.Next = new Node()
+                {
+                    Value = newRandomValue
+                };
+
+                
 
                 workingNode = workingNode.Next;
-                workingNode.Value = newRandomValue;
+
+
+                Debug.WriteLine($"\nnode #{6+anotherNode}: Value = {workingNode.Value}, Next node = {workingNode.Next}");
 
 
                 //*for loop for creating 5 new nodes that hold a random value between
