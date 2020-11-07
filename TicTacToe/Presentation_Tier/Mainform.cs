@@ -6,8 +6,8 @@ namespace Presentation_Tier
 {
     public partial class MainForm : Form
     {
-        private Middle_Tier.TicTacToeGame ticTacToeGame = new Middle_Tier.TicTacToeGame();
-        private TicTacToeGame _ticTacToeGame = new TicTacToeGame();
+        private Middle_Tier.TicTacToeGame _ticTacToeGame = new Middle_Tier.TicTacToeGame();
+        //private TicTacToeGame _ticTacToeGame = new TicTacToeGame();
         public MainForm()
         {
             InitializeComponent();
@@ -59,17 +59,15 @@ namespace Presentation_Tier
 
 
             _ticTacToeGame.ResetGrid();
-
             foreach (var item in panel1.Controls)
+            {
+                if (item is Button btn)
                 {
-                    var btn = item as Button;
-                    if (btn != null)
-                    {
-                        btn.Text = "?";
-                    }
+                    btn.Text = "?";
                 }
-
             }
+
+        }
 
         private void btnGoComputer_Click(object sender, EventArgs e)
         {

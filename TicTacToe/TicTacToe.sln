@@ -14,7 +14,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middle_Tier", "Middle_Tier\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToe_Interfaces", "TicTacToe_Interfaces\TicTacToe_Interfaces.csproj", "{E6ED4C6F-2FCD-4013-8858-EED352ECE3C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Middle_Tier_Tests", "Middle_Tier_Tests\Middle_Tier_Tests.csproj", "{BF482004-CE7B-47D2-9277-9432F7567A84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middle_Tier_Tests", "Middle_Tier_Tests\Middle_Tier_Tests.csproj", "{BF482004-CE7B-47D2-9277-9432F7567A84}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProfReynoldsUnitTests", "ProfReynoldsUnitTests\ProfReynoldsUnitTests.csproj", "{D2288ED3-66A1-4102-8EA7-9387FAB1C92C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +40,10 @@ Global
 		{BF482004-CE7B-47D2-9277-9432F7567A84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF482004-CE7B-47D2-9277-9432F7567A84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF482004-CE7B-47D2-9277-9432F7567A84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2288ED3-66A1-4102-8EA7-9387FAB1C92C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2288ED3-66A1-4102-8EA7-9387FAB1C92C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2288ED3-66A1-4102-8EA7-9387FAB1C92C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2288ED3-66A1-4102-8EA7-9387FAB1C92C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
