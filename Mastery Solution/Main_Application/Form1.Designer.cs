@@ -43,6 +43,8 @@
             this.lbFileOutput = new System.Windows.Forms.ListBox();
             this.txtFileName = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnWriteEncryptedFile = new System.Windows.Forms.Button();
+            this.btnReadEncryptedFile = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -87,6 +89,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnReadEncryptedFile);
+            this.panel1.Controls.Add(this.btnWriteEncryptedFile);
             this.panel1.Controls.Add(this.btnOpenFile);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -143,6 +147,26 @@
             this.panel3.Size = new System.Drawing.Size(251, 335);
             this.panel3.TabIndex = 6;
             // 
+            // btnWriteEncryptedFile
+            // 
+            this.btnWriteEncryptedFile.Location = new System.Drawing.Point(13, 100);
+            this.btnWriteEncryptedFile.Name = "btnWriteEncryptedFile";
+            this.btnWriteEncryptedFile.Size = new System.Drawing.Size(145, 51);
+            this.btnWriteEncryptedFile.TabIndex = 1;
+            this.btnWriteEncryptedFile.Text = "Write Encrypted File";
+            this.btnWriteEncryptedFile.UseVisualStyleBackColor = true;
+            this.btnWriteEncryptedFile.Click += new System.EventHandler(this.btnWriteEncryptedFile_Click);
+            // 
+            // btnReadEncryptedFile
+            // 
+            this.btnReadEncryptedFile.Location = new System.Drawing.Point(13, 158);
+            this.btnReadEncryptedFile.Name = "btnReadEncryptedFile";
+            this.btnReadEncryptedFile.Size = new System.Drawing.Size(145, 50);
+            this.btnReadEncryptedFile.TabIndex = 2;
+            this.btnReadEncryptedFile.Text = "Read Encrypted File";
+            this.btnReadEncryptedFile.UseVisualStyleBackColor = true;
+            this.btnReadEncryptedFile.Click += new System.EventHandler(this.btnReadEncryptedFile_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -186,6 +210,8 @@
         private System.Windows.Forms.ListBox lbFileOutput;
         private System.Windows.Forms.TextBox txtFileName;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnWriteEncryptedFile;
+        private System.Windows.Forms.Button btnReadEncryptedFile;
     }
 }
 
