@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Middle_Tier;
+using System;
 using System.Windows.Forms;
 
 namespace Presentation_Tier
@@ -6,6 +7,7 @@ namespace Presentation_Tier
     public partial class MainForm : Form
     {
         private Middle_Tier.TicTacToeGame ticTacToeGame = new Middle_Tier.TicTacToeGame();
+        private TicTacToeGame _ticTacToeGame = new TicTacToeGame();
         public MainForm()
         {
             InitializeComponent();
@@ -55,12 +57,19 @@ namespace Presentation_Tier
             // when button is clicked, this event is triggered, causing game to start over
             //MessageBox.Show("btnStartNewGame", "Button Click!");
 
-            var btn = item as Button; 
-            if (btn != null) 
-            { 
-                btn.Text = "?"; 
+
+            _ticTacToeGame.ResetGrid();
+
+            foreach (var item in panel1.Controls)
+                {
+                    var btn = item as Button;
+                    if (btn != null)
+                    {
+                        btn.Text = "?";
+                    }
+                }
+
             }
-        }
 
         private void btnGoComputer_Click(object sender, EventArgs e)
         {
