@@ -69,7 +69,7 @@ namespace UnitTestsForStacks
             myStack.Count.ShouldBe(5);
 
             var myStackArray = myStack.ToArray();
-            myStackArray.ShouldBeOfType<object[]>();
+            myStackArray.ShouldBeOfType<int[]>();
             myStackArray[0].ShouldBe(555);
             myStackArray[1].ShouldBe(444);
             myStackArray[2].ShouldBe(333);

@@ -1,16 +1,17 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace MyTestsForQueues
 {
     [TestClass]
-    public class BasicQueueTest
+    public class GenericQueueIntegerTest
     {
         [TestMethod]
-        public void Push_And_Pop_Values()
+        public void Enqueue_And_Dequeue_Values()
         {
-            var myQueue = new Queue();
+            var myQueue = new Queue<int>();
 
             myQueue.Enqueue(111);
             myQueue.Enqueue(222);
@@ -49,7 +50,7 @@ namespace MyTestsForQueues
         [TestMethod]
         public void Array_Test()
         {
-            var myQueue = new Queue();
+            var myQueue = new Queue<int>();
 
             myQueue.Enqueue(111);
             myQueue.Enqueue(222);
@@ -60,7 +61,7 @@ namespace MyTestsForQueues
             myQueue.Count.ShouldBe(5);
 
             var myQueueArray = myQueue.ToArray();
-            myQueueArray.ShouldBeOfType<object[]>();
+            myQueueArray.ShouldBeOfType<int[]>();
             myQueueArray[0].ShouldBe(111);
             myQueueArray[1].ShouldBe(222);
             myQueueArray[2].ShouldBe(333);

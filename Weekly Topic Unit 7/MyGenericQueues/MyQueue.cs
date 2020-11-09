@@ -21,9 +21,9 @@ namespace MyGenericQueues
         }
 
         /// <summary>
-        /// Removes and returns the last item from the queue
+        /// Removes and returns the first item from the queue
         /// </summary>
-        /// <returns>The last item in the queue</returns>
+        /// <returns>The first item in the queue</returns>
         public T Dequeue()
         {
             if (_list.Count == 0)
@@ -31,16 +31,16 @@ namespace MyGenericQueues
                 throw new InvalidOperationException("The queue is empty");
             }
 
-            T value = _list.Last.Value;
-            _list.RemoveLast();
+            T value = _list.First.Value;
+            _list.RemoveFirst();
 
             return value;
         }
 
         /// <summary>
-        /// Returns the last item of the queue without removing it
+        /// Returns the first item of the queue without removing it
         /// </summary>
-        /// <returns>The last item in queue</returns>
+        /// <returns>The first item in queue</returns>
         public T Peek()
         {
             if (_list.Count == 0)
@@ -48,7 +48,7 @@ namespace MyGenericQueues
                 throw new InvalidOperationException("The stack is empty");
             }
 
-            return _list.Last.Value;
+            return _list.First.Value;
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace MyGenericQueues
         /// <summary>
         /// I was not sure how to change this for a queue
         /// </summary>
-        /// <returns>The LIFO enumerator</returns>
+        /// <returns>The FIFO enumerator</returns>
         public System.Collections.Generic.IEnumerator<T> GetEnumerator()
         {
             return _list.GetEnumerator();
@@ -82,7 +82,7 @@ namespace MyGenericQueues
         /// <summary>
         /// I was not sure how to change this for a queue
         /// </summary>
-        /// <returns>The LIFO enumerator</returns>
+        /// <returns>The FIFO enumerator</returns>
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
         {
             return _list.GetEnumerator();
