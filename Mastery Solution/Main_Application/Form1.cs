@@ -11,6 +11,7 @@ using System.IO;
 using System.Diagnostics;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
+using CoreLibrary.Extensions;
 
 //Written by Spencer Johnson
 
@@ -115,6 +116,14 @@ namespace Main_Application
                 Debug.WriteLine(sourceFileContent.Left(25));
 
 
+                string outputFilePath =
+                    Path.ChangeExtension(openFileDialog.FileName, "encrypted");
+
+                Debug.WriteLine($"outputFilePath : {outputFilePath}");
+
+                WriteEncrypt(outputFilePath, sourceFileContent);
+
+
                 /*
                 using (StreamReader sr = File.OpenText(openFileDialog.FileName))
                 {
@@ -130,11 +139,23 @@ namespace Main_Application
 
         private void btnReadEncryptedFile_Click(object sender, EventArgs e)
         {
-            string fileContent = ReadEncrypt(openFileDialog.FileName);
+            var openFileDialog = new OpenFileDialog
+            {
+                Filter = @"Encrypted Files|*.encrypted|Comma Separated Values|*.csv|Text File|*.txt|All Files|*.*",
+                Title = @"Select a file, preferably a plain text file"
+            };
 
-            var parsedArrayOfStrings = Regex.Split(fileContent, "\n");
+            var dialogResult = openFileDialog.ShowDialog();
+            if (dialogResult == DialogResult.OK)
+            {
 
-            lbFileOutput.Items.AddRange(parsedArrayOfStrings);
+                string fileContent = ReadEncrypt(openFileDialog.FileName);
+
+                var parsedArrayOfStrings = Regex.Split(fileContent, "\n");
+
+                lbFileOutput.Items.AddRange(parsedArrayOfStrings);
+
+            }
         }
 
         /// <summary>
