@@ -45,7 +45,7 @@ namespace Presentation_Tier
             //btnCell21.Enabled = PlayerNameIsValid;
             //btnCell22.Enabled = PlayerNameIsValid;
             panel1.Enabled = PlayerNameIsValid;
-            
+
 
             // as the content changes. this event will trigger as each character changes
         }
@@ -86,7 +86,7 @@ namespace Presentation_Tier
             }
         }
 
-        private void btnCell00_Click(object sender, EventArgs e)
+        private void btnCellxx_Click(object sender, EventArgs e)
         {
             if (_ticTacToeGame.Winner != TicTacToe_Interfaces.CellOwners.Open) return;
 
@@ -107,174 +107,6 @@ namespace Presentation_Tier
             }
         }
 
-        private void btnCell01_Click(object sender, EventArgs e)
-        {
-            if (_ticTacToeGame.Winner != TicTacToe_Interfaces.CellOwners.Open) return;
 
-            var btn = sender as Button;
-
-            var rowID = btn.Name.Substring(7, 1).ToInt();
-
-            var colID = btn.Name.Substring(7, 1).ToInt();
-
-            Debug.WriteLine($"Button click: row={rowID} col={colID}");
-
-            _ticTacToeGame.AssignCellOwner(rowID, colID, TicTacToe_Interfaces.CellOwners.Human);
-            btn.Text = "X";
-
-            if (_ticTacToeGame.CheckForWinner())
-            {
-                MessageBox.Show("The Winner!");
-            }
-        }
-
-        private void btnCell02_Click(object sender, EventArgs e)
-        {
-            if (_ticTacToeGame.Winner != TicTacToe_Interfaces.CellOwners.Open) return;
-
-            var btn = sender as Button;
-
-            var rowID = btn.Name.Substring(7, 1).ToInt();
-
-            var colID = btn.Name.Substring(7, 1).ToInt();
-
-            Debug.WriteLine($"Button click: row={rowID} col={colID}");
-
-            _ticTacToeGame.AssignCellOwner(rowID, colID, TicTacToe_Interfaces.CellOwners.Human);
-            btn.Text = "X";
-
-            if (_ticTacToeGame.CheckForWinner())
-            {
-                MessageBox.Show("The Winner!");
-            }
-        }
-
-        private void btnCell10_Click(object sender, EventArgs e)
-        {
-            if (_ticTacToeGame.Winner != TicTacToe_Interfaces.CellOwners.Open) return;
-
-            var btn = sender as Button;
-
-            var rowID = btn.Name.Substring(7, 1).ToInt();
-
-            var colID = btn.Name.Substring(7, 1).ToInt();
-
-            Debug.WriteLine($"Button click: row={rowID} col={colID}");
-
-            _ticTacToeGame.AssignCellOwner(rowID, colID, TicTacToe_Interfaces.CellOwners.Human);
-            btn.Text = "X";
-
-            if (_ticTacToeGame.CheckForWinner())
-            {
-                MessageBox.Show("The Winner!");
-            }
-        }
-
-        private void btnCell11_Click(object sender, EventArgs e)
-        {
-            if (_ticTacToeGame.Winner != TicTacToe_Interfaces.CellOwners.Open) return;
-
-            var btn = sender as Button;
-
-            var rowID = btn.Name.Substring(7, 1).ToInt();
-
-            var colID = btn.Name.Substring(7, 1).ToInt();
-
-            Debug.WriteLine($"Button click: row={rowID} col={colID}");
-
-            _ticTacToeGame.AssignCellOwner(rowID, colID, TicTacToe_Interfaces.CellOwners.Human);
-            btn.Text = "X";
-
-            if (_ticTacToeGame.CheckForWinner())
-            {
-                MessageBox.Show("The Winner!");
-            }
-        }
-
-        private void btnCell12_Click(object sender, EventArgs e)
-        {
-            if (_ticTacToeGame.Winner != TicTacToe_Interfaces.CellOwners.Open) return;
-
-            var btn = sender as Button;
-
-            var rowID = btn.Name.Substring(7, 1).ToInt();
-
-            var colID = btn.Name.Substring(7, 1).ToInt();
-
-            Debug.WriteLine($"Button click: row={rowID} col={colID}");
-
-            _ticTacToeGame.AssignCellOwner(rowID, colID, TicTacToe_Interfaces.CellOwners.Human);
-            btn.Text = "X";
-
-            if (_ticTacToeGame.CheckForWinner())
-            {
-                MessageBox.Show("The Winner!");
-            }
-        }
-
-        private void btnCell20_Click(object sender, EventArgs e)
-        {
-            if (_ticTacToeGame.Winner != TicTacToe_Interfaces.CellOwners.Open) return;
-
-            var btn = sender as Button;
-
-            var rowID = btn.Name.Substring(7, 1).ToInt();
-
-            var colID = btn.Name.Substring(7, 1).ToInt();
-
-            Debug.WriteLine($"Button click: row={rowID} col={colID}");
-
-            _ticTacToeGame.AssignCellOwner(rowID, colID, TicTacToe_Interfaces.CellOwners.Human);
-            btn.Text = "X";
-
-            if (_ticTacToeGame.CheckForWinner())
-            {
-                MessageBox.Show("The Winner!");
-            }
-        }
-
-        private void btnCell21_Click(object sender, EventArgs e)
-        {
-            if (_ticTacToeGame.Winner != TicTacToe_Interfaces.CellOwners.Open) return;
-
-            var btn = sender as Button;
-
-            var rowID = btn.Name.Substring(7, 1).ToInt();
-
-            var colID = btn.Name.Substring(7, 1).ToInt();
-
-            Debug.WriteLine($"Button click: row={rowID} col={colID}");
-
-            _ticTacToeGame.AssignCellOwner(rowID, colID, TicTacToe_Interfaces.CellOwners.Human);
-            btn.Text = "X";
-
-            if (_ticTacToeGame.CheckForWinner())
-            {
-                MessageBox.Show("The Winner!");
-            }
-        }
-
-        private void btnCell22_Click(object sender, EventArgs e)
-        {
-            if (_ticTacToeGame.Winner != TicTacToe_Interfaces.CellOwners.Open) return;
-
-            var btn = sender as Button;
-
-            var rowID = btn.Name.Substring(7, 1).ToInt();
-
-            var colID = btn.Name.Substring(7, 1).ToInt();
-
-            Debug.WriteLine($"Button click: row={rowID} col={colID}");
-
-            _ticTacToeGame.AssignCellOwner(rowID, colID, TicTacToe_Interfaces.CellOwners.Human);
-            btn.Text = "X";
-
-            if (_ticTacToeGame.CheckForWinner())
-            {
-                MessageBox.Show("The Winner!");
-            }
-        }
-
-        
     }
 }

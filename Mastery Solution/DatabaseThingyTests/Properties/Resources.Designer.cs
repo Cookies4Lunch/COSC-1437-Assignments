@@ -61,9 +61,7 @@ namespace DatabaseThingyTests.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Data Source=sql5071.site4now.net;Initial
-        ///Catalog=DB_9EF7AD_Northwind;User
-        ///Id=COSC;Password=L0n3st4r;.
+        ///   Looks up a localized string similar to Data Source=sql5071.site4now.net;Initial Catalog=DB_9EF7AD_Northwind;User Id=COSC;Password=L0n3st4r;.
         /// </summary>
         internal static string SqlConnectionString {
             get {
