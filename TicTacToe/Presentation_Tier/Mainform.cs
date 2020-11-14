@@ -86,6 +86,10 @@ namespace Presentation_Tier
             }
         }
 
+        /*
+         * ProfReynolds
+         * this single event method services all 9 buttons
+         */
         private void btnCellxx_Click(object sender, EventArgs e)
         {
             if (_ticTacToeGame.Winner != TicTacToe_Interfaces.CellOwners.Open) return;
