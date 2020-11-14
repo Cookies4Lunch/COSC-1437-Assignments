@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CoreLibrary\CoreLibrary.csproj" />
+    <ProjectReference Include="..\DatabaseThingyTests\DatabaseThingyTests.csproj" />
+    <ProjectReference Include="..\DatabaseThingy\DatabaseThingy.csproj" />
   </ItemGroup>
 
   <ItemGroup>

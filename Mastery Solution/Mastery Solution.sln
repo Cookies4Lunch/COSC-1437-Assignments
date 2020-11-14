@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreLibrary", "CoreLibrary\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreLibrary_Tests", "CoreLibrary_Tests\CoreLibrary_Tests.csproj", "{180D2661-8B14-4C80-8CAF-F61AA0D9E7AA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseThingy", "DatabaseThingy\DatabaseThingy.csproj", "{3016580F-4CAD-476A-89BF-43FFE096C357}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseThingyTests", "DatabaseThingyTests\DatabaseThingyTests.csproj", "{8DF22A78-8EF1-4150-89C4-CB712714F5BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{180D2661-8B14-4C80-8CAF-F61AA0D9E7AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{180D2661-8B14-4C80-8CAF-F61AA0D9E7AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{180D2661-8B14-4C80-8CAF-F61AA0D9E7AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3016580F-4CAD-476A-89BF-43FFE096C357}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3016580F-4CAD-476A-89BF-43FFE096C357}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3016580F-4CAD-476A-89BF-43FFE096C357}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3016580F-4CAD-476A-89BF-43FFE096C357}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DF22A78-8EF1-4150-89C4-CB712714F5BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DF22A78-8EF1-4150-89C4-CB712714F5BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DF22A78-8EF1-4150-89C4-CB712714F5BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DF22A78-8EF1-4150-89C4-CB712714F5BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

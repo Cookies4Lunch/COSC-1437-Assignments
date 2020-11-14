@@ -118,7 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="SqlConnectionString" xml:space="preserve">
-    <value>Data Source=sql5071.site4now.net;Initial Catalog=DB_9EF7AD_Northwind;User Id=COSC;Password=L0n3st4r;</value>
+    <value>Data Source=sql5071.site4now.net;Initial
+Catalog=DB_9EF7AD_Northwind;User
+Id=COSC;Password=L0n3st4r;</value>
     <comment>This connection string is used by the COSC classes as a demonstrator.</comment>
   </data>
 </root>

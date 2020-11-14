@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Main_Application.Properties {
+namespace DatabaseThingyTests.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Main_Application.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Main_Application.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DatabaseThingyTests.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,9 @@ namespace Main_Application.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Data Source=sql5071.site4now.net;Initial Catalog=DB_9EF7AD_Northwind;User Id=COSC;Password=L0n3st4r;.
+        ///   Looks up a localized string similar to Data Source=sql5071.site4now.net;Initial
+        ///Catalog=DB_9EF7AD_Northwind;User
+        ///Id=COSC;Password=L0n3st4r;.
         /// </summary>
         internal static string SqlConnectionString {
             get {

@@ -12,6 +12,8 @@ using System.Diagnostics;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 using CoreLibrary.Extensions;
+using System.Data.SqlClient;
+using DatabaseThingy;
 
 //Written by Spencer Johnson
 
@@ -219,5 +221,24 @@ namespace Main_Application
             return msg;
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var sqlConnectionString = Properties.Resources.SqlConnectionString;
+            var dataTableQueryString = @"SELECT [CustomerID] ,[CompanyName] ,[ContactName] FROM [Customers]";
+            
+            var conventionalAdo = new DatabaseThingy.ConventionalAdo();
+            var runQueryTable = conventionalAdo.RunQueryTable(sqlConnectionString, dataTableQueryString);
+
+            foreach (DataRow dataRow in runQueryTable.Rows)
+            {
+                var displayString = $"ID:{dataRow.Field<string>("CustomerID")},      Customer Name:{dataRow.Field<string>("ContactName")} ";
+                lbFileOutput.Items.Add(displayString);
+            }
+        }
     }
 }
