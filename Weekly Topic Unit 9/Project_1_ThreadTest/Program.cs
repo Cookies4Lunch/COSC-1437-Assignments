@@ -1,6 +1,13 @@
 ﻿using System;
 using System.Threading;
 
+/*
+ * ProfReynolds
+ * put your name here
+ *
+ * also, you did not set the startup project to Current Item. How did you test it???
+ */
+
 namespace Project_1_ThreadTest
 {
     class Program

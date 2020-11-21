@@ -5,6 +5,7 @@ using System.Linq;
 
 /*
  * ProfReynolds
+ * did you forget something up here?
  */
 
 namespace Middle_Tier
@@ -145,10 +146,75 @@ namespace Middle_Tier
 
         public void AutoPlayComputer()
         {
+            /*
+             * ProfReynolds
+             * You are missing much here
+             */
+
+
+            /*
+             * ProfReynolds
+             * First, you must look to find a possible winning move
+             * this will get you started
+             */
+            foreach (var combination in _winningCombinations)
+            {
+                if (combination[0].CellOwner == CellOwners.Open)
+                {
+                    if (combination[1].CellOwner == CellOwners.Computer &&
+                        combination[2].CellOwner == CellOwners.Computer)
+                    {
+                        AssignCellOwner(combination[0].RowID, combination[0].ColID, CellOwners.Computer);
+                        return;
+                    }
+                }
+                if (combination[1].CellOwner == CellOwners.Open)
+                {
+                    // ProfReynolds - I'll leave this for you to figure out
+                }
+                if (combination[2].CellOwner == CellOwners.Open)
+                {
+                    // ProfReynolds - I'll leave this for you to figure out
+                }
+            }
+
+
+            /*
+             * ProfReynolds
+             * Second, you must look to find a necessary blocking move to prevent the human from winning
+             * this will get you started
+             */
+            foreach (var combination in _winningCombinations)
+            {
+                if (combination[0].CellOwner == CellOwners.Open)
+                {
+                    if (combination[1].CellOwner == CellOwners.Human &&
+                        combination[2].CellOwner == CellOwners.Human)
+                    {
+                        // ProfReynolds - I'll leave this for you to figure out
+                    }
+                }
+                if (combination[1].CellOwner == CellOwners.Open)
+                {
+                    // ProfReynolds - I'll leave this for you to figure out
+                }
+                if (combination[2].CellOwner == CellOwners.Open)
+                {
+                    // ProfReynolds - I'll leave this for you to figure out
+                }
+            }
+
+
             foreach (var targetCell in _goodNextMove)
             {
                 if (targetCell.CellOwner == CellOwners.Open)
                 {
+                    /*
+                     * ProfReynolds
+                     * replace this with the method
+                     * AssignCellOwner(targetCell.RowID, targetCell.ColID, CellOwners.Computer);
+                     * this is necessary since you need to trigger the event when a change is made
+                     */
                     targetCell.CellOwner = CellOwners.Computer;
                     return;
                 }

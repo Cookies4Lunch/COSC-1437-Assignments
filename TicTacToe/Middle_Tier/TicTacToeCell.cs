@@ -1,8 +1,6 @@
 ﻿using System;
 using TicTacToe_Interfaces;
 
-
-
 //Written by Spencer Johnson
 
 namespace Middle_Tier

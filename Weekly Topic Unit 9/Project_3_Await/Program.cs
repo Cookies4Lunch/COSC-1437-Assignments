@@ -3,12 +3,23 @@ using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 
+/*
+ * ProfReynolds
+ * put your name here
+ */
+
 namespace Project_3_Await
 {
     class Program
     {
         static void Main(string[] args)
         {
+            /*
+             * ProfReynolds
+             * you forgot some stuff - 4 lines of header and a while loop
+             * didn't you notice this when you tested the program???
+             */
+
             Console.WriteLine();
             Console.WriteLine("1) Demo the AwaitDemo1");
             Console.WriteLine("2) Demo the AwaitDemo2");

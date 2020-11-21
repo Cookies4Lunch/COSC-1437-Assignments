@@ -9,6 +9,11 @@ namespace Project_2_ThreadSafe
     {
         static void Main(string[] args)
         {
+            /*
+             * ProfReynolds
+             * you forgot some stuff - 4 lines of header and a while loop
+             */
+
             Console.WriteLine();
             Console.WriteLine("1) Demo the ThreadSafeTest");
             Console.WriteLine("X) Exit");

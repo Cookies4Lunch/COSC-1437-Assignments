@@ -4,6 +4,11 @@ using System.Windows.Forms;
 using CoreLibrary.Extensions;
 using System.Diagnostics;
 
+/*
+ * ProfReynolds
+ * did you forget something up here?
+ */
+
 namespace Presentation_Tier
 {
     public partial class MainForm : Form
@@ -15,7 +20,33 @@ namespace Presentation_Tier
         {
             InitializeComponent();
 
+            /*
+             * ProfReynolds
+             * do not ever pout anything extra here (I have never needed to)
+             * rather than initialize the box during the constructor or Load event, just set
+             * the Text property in the designer
+             */
             txtPlayerName.Text = "Spencer";
+        }
+
+        /*
+         * ProfReynolds
+         * I rearranged the methods. Does not change the operation but makes it easier to follow:
+         * 1) constructor (MainForm) and never put anything other than InitializeComponent in the method
+         * 2) form events especially the load event
+         * 3) control events especially the click events
+         * 4) other event handlers such as the _ticTacToeGame.CellOwnerChanged
+         * 5) misc necessary methods (since very, very little implementation belongs in the UI, this should be limited)
+         */
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            /*
+             * ProfReynolds
+             * I created this event method for you.
+             * check out the section in Unit 9: Presentation_Tier.MainForm
+             * this is where you need to connect the event from the _ticTacToe class to the CellOwnerChangedHandler
+             */
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -31,6 +62,11 @@ namespace Presentation_Tier
 
         private void txtPlayerName_TextChanges(object sender, EventArgs e)
         {
+            /*
+             * ProfReynolds
+             * good programming standards say that method variabloes should
+             * follow the camel case format: playerNameIsValid
+             */
             bool PlayerNameIsValid = (txtPlayerName.Text.Length >= 3);
 
             btnStartNewGame.Enabled = PlayerNameIsValid;
@@ -53,6 +89,11 @@ namespace Presentation_Tier
         private void txtPlayerName_Validated(object sender, EventArgs e)
         {
             // when the focus leaves the text box, this event is triggered
+
+            /*
+             * ProfReynolds
+             * at this point, you need to assign the txtPlayerName.Text to the _ticTacToe.PlayerName
+             */
         }
 
         private void btnStartNewGame_Click(object sender, EventArgs e)
@@ -83,6 +124,7 @@ namespace Presentation_Tier
             if (_ticTacToeGame.CheckForWinner())
             {
                 MessageBox.Show("Winner!");
+                // ProfReynolds - this would be better: MessageBox.Show("Computer","The Winner!");
             }
         }
 
@@ -108,9 +150,9 @@ namespace Presentation_Tier
             if (_ticTacToeGame.CheckForWinner())
             {
                 MessageBox.Show("The Winner!");
+                // ProfReynolds - this would be better: MessageBox.Show(_ticTacToeGame.PlayerName,"The Winner!");
             }
         }
-
 
     }
 }

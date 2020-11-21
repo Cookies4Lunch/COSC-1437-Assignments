@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
+/*
+ * ProfReynolds
+ * did you forget something up here?
+ */
+
 namespace CoreLibrary.Extensions
 {
     public static class NumericExtensions
