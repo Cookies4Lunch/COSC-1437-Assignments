@@ -4,10 +4,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-/*
- * ProfReynolds
- * did you forget something up here?
- */
+//Spencer Johnson
 
 namespace CoreLibrary.Extensions
 {

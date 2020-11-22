@@ -4,16 +4,45 @@ using TicTacToe_Interfaces;
 using System.Linq;
 
 /*
- * ProfReynolds
- * did you forget something up here?
+ * Spencer Johnson
  */
 
 namespace Middle_Tier
 {
     public class TicTacToeGame : ITicTacToeGame
     {
-        public string PlayerName { get; set; } = "The Human";
+        public string PlayerName { get; set; } = "Human";
         public CellOwners Winner { get; private set; }
+
+        // unit #9
+        /// <summary>
+        /// this delegate defines the event (and includes the parameters from above)
+        /// </summary>
+        /// <param name="sender">normal event object self reference</param>
+        /// <param name="e">row, column, and owner of a marker (square)</param>
+        public delegate void CellOwnerChangedHandler(object sender, CellOwnerChangedArgs e);
+
+        /// <summary>
+        /// The exposed event to the MainForm
+        /// </summary>
+        public event CellOwnerChangedHandler CellOwnerChanged;
+
+        /// <inheritdoc />
+        /// <summary>
+        /// defines the parameters that are returned to the parent form when the event is triggered
+        /// </summary>
+        public class CellOwnerChangedArgs : EventArgs
+        {
+            public CellOwnerChangedArgs(int rowID, int colID, CellOwners cellOwner)
+            {
+                RowID = rowID;
+                ColID = colID;
+                CellOwner = cellOwner;
+            }
+            public int RowID { get; }
+            public int ColID { get; }
+            public CellOwners CellOwner { get; }
+        }
 
 
         /// <summary>
@@ -44,15 +73,15 @@ namespace Middle_Tier
 
             _goodNextMove = new Collection<TicTacToeCell>()
             {
-                _ticTacToeCells.First(TicTacToeCell => TicTacToeCell.RowID==1 && TicTacToeCell.ColID==1),
-                _ticTacToeCells.First(TicTacToeCell => TicTacToeCell.RowID==0 && TicTacToeCell.ColID==0),
-                _ticTacToeCells.First(TicTacToeCell => TicTacToeCell.RowID==0 && TicTacToeCell.ColID==2),
-                _ticTacToeCells.First(TicTacToeCell => TicTacToeCell.RowID==2 && TicTacToeCell.ColID==0),
-                _ticTacToeCells.First(TicTacToeCell => TicTacToeCell.RowID==2 && TicTacToeCell.ColID==2),
-                _ticTacToeCells.First(TicTacToeCell => TicTacToeCell.RowID==0 && TicTacToeCell.ColID==1),
-                _ticTacToeCells.First(TicTacToeCell => TicTacToeCell.RowID==1 && TicTacToeCell.ColID==0),
-                _ticTacToeCells.First(TicTacToeCell => TicTacToeCell.RowID==1 && TicTacToeCell.ColID==2),
-                _ticTacToeCells.First(TicTacToeCell => TicTacToeCell.RowID==2 && TicTacToeCell.ColID==1),
+                _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==1),
+                _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==0),
+                _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==2),
+                _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==0),
+                _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==2),
+                _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==1),
+                _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==0),
+                _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==2),
+                _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==1),
             };
 
             _winningCombinations = new Collection<Collection<TicTacToeCell>>()
@@ -136,12 +165,19 @@ namespace Middle_Tier
             if (_ticTacToeCells.Count == 0)
                 return;
 
-            var targetCell = _ticTacToeCells.FirstOrDefault(TicTacToeCell => TicTacToeCell.RowID == CellRow && TicTacToeCell.ColID == CellCol);
+            var targetCell = _ticTacToeCells.FirstOrDefault(tttc => tttc.RowID == CellRow && tttc.ColID == CellCol);
 
             if (targetCell == null)
                 return;
 
             targetCell.CellOwner = CellOwner;
+
+            // unit #9
+            // these will be the arguments used when the event is fired
+            var eventArgs = new CellOwnerChangedArgs(CellRow, CellCol, CellOwner);
+            //bubble the event up to the parent ( ONLY if the parent is listening )
+            CellOwnerChanged?.Invoke(this, eventArgs);
+
         }
 
         public void AutoPlayComputer()
@@ -170,11 +206,20 @@ namespace Middle_Tier
                 }
                 if (combination[1].CellOwner == CellOwners.Open)
                 {
-                    // ProfReynolds - I'll leave this for you to figure out
+                    if (combination[0].CellOwner == CellOwners.Computer &&
+                        combination[2].CellOwner == CellOwners.Computer)
+                    {
+                        AssignCellOwner(combination[1].RowID, combination[1].ColID, CellOwners.Computer);
+                    }
                 }
                 if (combination[2].CellOwner == CellOwners.Open)
                 {
-                    // ProfReynolds - I'll leave this for you to figure out
+                    if (combination[0].CellOwner == CellOwners.Computer &&
+                        combination[1].CellOwner == CellOwners.Computer)
+                    {
+                        AssignCellOwner(combination[2].RowID, combination[2].ColID, CellOwners.Computer);
+                        return;
+                    }
                 }
             }
 
@@ -191,16 +236,27 @@ namespace Middle_Tier
                     if (combination[1].CellOwner == CellOwners.Human &&
                         combination[2].CellOwner == CellOwners.Human)
                     {
-                        // ProfReynolds - I'll leave this for you to figure out
+                        AssignCellOwner(combination[0].RowID, combination[0].ColID, CellOwners.Computer);
+                        return;
                     }
                 }
                 if (combination[1].CellOwner == CellOwners.Open)
                 {
-                    // ProfReynolds - I'll leave this for you to figure out
+                    if (combination[0].CellOwner == CellOwners.Human &&
+                        combination[2].CellOwner == CellOwners.Human)
+                    {
+                        AssignCellOwner(combination[1].RowID, combination[1].ColID, CellOwners.Computer);
+                        return;
+                    }
                 }
                 if (combination[2].CellOwner == CellOwners.Open)
                 {
-                    // ProfReynolds - I'll leave this for you to figure out
+                    if (combination[0].CellOwner == CellOwners.Human &&
+                        combination[1].CellOwner == CellOwners.Human)
+                    {
+                        AssignCellOwner(combination[2].RowID, combination[2].ColID, CellOwners.Computer);
+                        return;
+                    }
                 }
             }
 
@@ -209,14 +265,10 @@ namespace Middle_Tier
             {
                 if (targetCell.CellOwner == CellOwners.Open)
                 {
-                    /*
-                     * ProfReynolds
-                     * replace this with the method
-                     * AssignCellOwner(targetCell.RowID, targetCell.ColID, CellOwners.Computer);
-                     * this is necessary since you need to trigger the event when a change is made
-                     */
-                    targetCell.CellOwner = CellOwners.Computer;
+                    
+                    AssignCellOwner(targetCell.RowID, targetCell.ColID, CellOwners.Computer);
                     return;
+
                 }
             }
         }

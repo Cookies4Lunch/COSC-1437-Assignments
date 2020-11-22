@@ -53,6 +53,7 @@
             this.txtPlayerName.Name = "txtPlayerName";
             this.txtPlayerName.Size = new System.Drawing.Size(223, 23);
             this.txtPlayerName.TabIndex = 0;
+            this.txtPlayerName.Text = "Spencer";
             this.txtPlayerName.TextChanged += new System.EventHandler(this.txtPlayerName_TextChanges);
             this.txtPlayerName.VisibleChanged += new System.EventHandler(this.txtPlayerName_Validated);
             // 

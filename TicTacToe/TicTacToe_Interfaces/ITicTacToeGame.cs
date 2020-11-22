@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-/*
- * ProfReynolds
- * did you forget something up here?
- */
+//Spencer Johnson
 
 namespace TicTacToe_Interfaces
 {

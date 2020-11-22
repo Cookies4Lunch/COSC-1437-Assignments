@@ -1,9 +1,6 @@
 ﻿using System;
 
-/*
- * ProfReynolds
- * did you forget something up here?
- */
+//Spencer Johnson
 
 namespace TicTacToe_Interfaces
 {

@@ -2,6 +2,8 @@
 using System.Reflection;
 using System.Windows.Forms;
 
+//Spencer Johnson
+
 namespace Presentation_Tier
 {
     partial class AboutBox1 : Form

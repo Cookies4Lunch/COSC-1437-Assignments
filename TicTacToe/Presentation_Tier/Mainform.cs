@@ -3,30 +3,27 @@ using System;
 using System.Windows.Forms;
 using CoreLibrary.Extensions;
 using System.Diagnostics;
+using TicTacToe_Interfaces;
 
-/*
- * ProfReynolds
- * did you forget something up here?
- */
+//Spencer Johnson
 
 namespace Presentation_Tier
 {
     public partial class MainForm : Form
     {
+        
+
+
+
+
         private Middle_Tier.TicTacToeGame _ticTacToeGame = new Middle_Tier.TicTacToeGame();
 
-        //private TicTacToeGame _ticTacToeGame = new TicTacToeGame();
+        
         public MainForm()
         {
             InitializeComponent();
 
-            /*
-             * ProfReynolds
-             * do not ever pout anything extra here (I have never needed to)
-             * rather than initialize the box during the constructor or Load event, just set
-             * the Text property in the designer
-             */
-            txtPlayerName.Text = "Spencer";
+            
         }
 
         /*
@@ -47,6 +44,7 @@ namespace Presentation_Tier
              * check out the section in Unit 9: Presentation_Tier.MainForm
              * this is where you need to connect the event from the _ticTacToe class to the CellOwnerChangedHandler
              */
+            _ticTacToeGame.CellOwnerChanged += this.CellOwnerChangedHandler;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -67,10 +65,10 @@ namespace Presentation_Tier
              * good programming standards say that method variabloes should
              * follow the camel case format: playerNameIsValid
              */
-            bool PlayerNameIsValid = (txtPlayerName.Text.Length >= 3);
+            bool playerNameIsValid = (txtPlayerName.Text.Length >= 3);
 
-            btnStartNewGame.Enabled = PlayerNameIsValid;
-            btnGoComputer.Enabled = PlayerNameIsValid;
+            btnStartNewGame.Enabled = playerNameIsValid;
+            btnGoComputer.Enabled = playerNameIsValid;
             //btnCell00.Enabled = PlayerNameIsValid;
             //btnCell01.Enabled = PlayerNameIsValid;
             //btnCell02.Enabled = PlayerNameIsValid;
@@ -80,7 +78,7 @@ namespace Presentation_Tier
             //btnCell20.Enabled = PlayerNameIsValid;
             //btnCell21.Enabled = PlayerNameIsValid;
             //btnCell22.Enabled = PlayerNameIsValid;
-            panel1.Enabled = PlayerNameIsValid;
+            panel1.Enabled = playerNameIsValid;
 
 
             // as the content changes. this event will trigger as each character changes
@@ -90,6 +88,7 @@ namespace Presentation_Tier
         {
             // when the focus leaves the text box, this event is triggered
 
+            _ticTacToeGame.PlayerName = txtPlayerName.Text;
             /*
              * ProfReynolds
              * at this point, you need to assign the txtPlayerName.Text to the _ticTacToe.PlayerName
@@ -123,7 +122,7 @@ namespace Presentation_Tier
 
             if (_ticTacToeGame.CheckForWinner())
             {
-                MessageBox.Show("Winner!");
+                MessageBox.Show("Computer", "The Winner!");
                 // ProfReynolds - this would be better: MessageBox.Show("Computer","The Winner!");
             }
         }
@@ -149,8 +148,41 @@ namespace Presentation_Tier
 
             if (_ticTacToeGame.CheckForWinner())
             {
-                MessageBox.Show("The Winner!");
+                MessageBox.Show(_ticTacToeGame.PlayerName, "The Winner!");
                 // ProfReynolds - this would be better: MessageBox.Show(_ticTacToeGame.PlayerName,"The Winner!");
+            }
+        }
+
+        private void CellOwnerChangedHandler(object sender, Middle_Tier.TicTacToeGame.CellOwnerChangedArgs e)
+        {
+            var buttonName = $"btnCell{e.RowID}{e.ColID}";
+            foreach (var control in panel1.Controls)
+            {
+                if (control is Button button)
+                {
+                    if (button.Name == buttonName)
+                    {
+                        switch (e.CellOwner)
+                        {
+                            case CellOwners.Error:
+                                button.Text = "#";
+                                break;
+
+                            case CellOwners.Open:
+                                button.Text = "?";
+                                break;
+
+                            case CellOwners.Human:
+                                button.Text = "X";
+                                break;
+
+                            case CellOwners.Computer:
+                                button.Text = "O";
+                                break;
+
+                        }
+                    }
+                }
             }
         }
 
