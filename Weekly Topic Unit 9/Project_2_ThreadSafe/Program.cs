@@ -9,33 +9,37 @@ namespace Project_2_ThreadSafe
     {
         static void Main(string[] args)
         {
-            /*
-             * ProfReynolds
-             * you forgot some stuff - 4 lines of header and a while loop
-             */
 
             Console.WriteLine();
-            Console.WriteLine("1) Demo the ThreadSafeTest");
-            Console.WriteLine("X) Exit");
-            Console.Write("Select demonstration: ");
-
-            var keyPressed = Console.ReadKey().KeyChar;
-            Console.WriteLine();
+            Console.WriteLine("Spencer Johnson");
+            Console.WriteLine("Weekly Topic Unit 9");
             Console.WriteLine();
 
-            switch (keyPressed)
+            while (true)
             {
-                case 'x':
-                case 'X':
-                    return;
+                Console.WriteLine();
+                Console.WriteLine("1) Demo the ThreadSafeTest");
+                Console.WriteLine("X) Exit");
+                Console.Write("Select demonstration: ");
 
-                case '1': ThreadSafeTest(); break;
-                
+                var keyPressed = Console.ReadKey().KeyChar;
+                Console.WriteLine();
+                Console.WriteLine();
 
-                default:
-                    break;
+                switch (keyPressed)
+                {
+                    case 'x':
+                    case 'X':
+                        return;
+
+                    case '1': ThreadSafeTest(); break;
+
+
+                    default:
+                        break;
+                }
+                Console.WriteLine();
             }
-            Console.WriteLine();
         }
 
 

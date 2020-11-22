@@ -3,9 +3,9 @@ using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 
+
 /*
- * ProfReynolds
- * put your name here
+ * Spencer Johnson
  */
 
 namespace Project_3_Await
@@ -14,36 +14,39 @@ namespace Project_3_Await
     {
         static void Main(string[] args)
         {
-            /*
-             * ProfReynolds
-             * you forgot some stuff - 4 lines of header and a while loop
-             * didn't you notice this when you tested the program???
-             */
-
             Console.WriteLine();
-            Console.WriteLine("1) Demo the AwaitDemo1");
-            Console.WriteLine("2) Demo the AwaitDemo2");
-            Console.WriteLine("X) exit");
-            Console.Write("Select demonstration: ");
-
-            var keyPressed = Console.ReadKey().KeyChar;
-            Console.WriteLine();
+            Console.WriteLine("Spencer Johnson");
+            Console.WriteLine("Weekly Topic Unit 9");
             Console.WriteLine();
 
-            switch (keyPressed)
+            while (true)
             {
-                case 'x':
-                case 'X':
-                    return;
+                Console.WriteLine();
+                Console.WriteLine("1) Demo the AwaitDemo1");
+                Console.WriteLine("2) Demo the AwaitDemo2");
+                Console.WriteLine("X) exit");
+                Console.Write("Select demonstration: ");
 
-                case '1': AwaitDemo1(); break;
-                case '2': AwaitDemo2(); break;
+                var keyPressed = Console.ReadKey().KeyChar;
+                Console.WriteLine();
+                Console.WriteLine();
+
+                switch (keyPressed)
+                {
+                    case 'x':
+                    case 'X':
+                        return;
+
+                    case '1': AwaitDemo1(); break;
+                    case '2': AwaitDemo2(); break;
 
 
-                default:
-                    break;
+                    default:
+                        break;
+                }
+                Console.WriteLine();
+
             }
-            Console.WriteLine();
         }
 
         static Stopwatch _stopwatch = new Stopwatch();
