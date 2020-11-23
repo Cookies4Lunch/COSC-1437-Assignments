@@ -172,6 +172,8 @@ namespace Middle_Tier
 
             targetCell.CellOwner = CellOwner;
 
+            System.Diagnostics.Debug.Print($"AssignCellOwner: {CellRow},{CellCol} = {CellOwner.ToString()}");
+
             // unit #9
             // these will be the arguments used when the event is fired
             var eventArgs = new CellOwnerChangedArgs(CellRow, CellCol, CellOwner);
@@ -432,19 +434,22 @@ namespace Middle_Tier
             //}
             #endregion
 
-            foreach (var combination in _winningCombinations)
+            if (_winningCombinations != null)
             {
-                var firstCell = combination[0];
+                foreach (var combination in _winningCombinations)
+                {
+                    var firstCell = combination[0];
 
-                if ((firstCell.CellOwner != CellOwners.Computer) && 
-                    (firstCell.CellOwner != CellOwners.Human)) continue;
+                    if ((firstCell.CellOwner != CellOwners.Computer) &&
+                        (firstCell.CellOwner != CellOwners.Human)) continue;
 
-                if ((firstCell.CellOwner != combination[1].CellOwner) ||
-                    (firstCell.CellOwner != combination[2].CellOwner)) continue;
+                    if ((firstCell.CellOwner != combination[1].CellOwner) ||
+                        (firstCell.CellOwner != combination[2].CellOwner)) continue;
 
-                Winner = firstCell.CellOwner;
+                    Winner = firstCell.CellOwner;
 
-                return true;
+                    return true;
+                }
             }
 
             return false;

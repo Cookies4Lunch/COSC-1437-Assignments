@@ -187,13 +187,13 @@ namespace ProfReynoldsUnitTests
             ticTacToeGame.ResetGrid();
 
             // act
-            ticTacToeGame.AutoPlayComputer();
+            ticTacToeGame.AutoPlayComputer();  // 1,1 first good move
             ticTacToeGame.AssignCellOwner(0, 0, CellOwners.Human);
-            ticTacToeGame.AutoPlayComputer();
+            ticTacToeGame.AutoPlayComputer();  // 0,2 third in good move list because second good move blocked by human
             ticTacToeGame.AssignCellOwner(2, 0, CellOwners.Human);
-            ticTacToeGame.AutoPlayComputer();
-            ticTacToeGame.AssignCellOwner(1, 0, CellOwners.Human);
-            ticTacToeGame.AutoPlayComputer();
+            ticTacToeGame.AutoPlayComputer();  // 1,0 to block winning move from human
+            ticTacToeGame.AssignCellOwner(1, 0, CellOwners.Human);  // this overwrites the previous move by the computer???
+            ticTacToeGame.AutoPlayComputer();  // 2,2 fifth in good move list
 
             // assert
             ticTacToeGame.CheckForWinner().ShouldBeTrue();

@@ -137,9 +137,10 @@ namespace Presentation_Tier
 
             var btn = sender as Button;
 
+            // btnCellXY
             var rowID = btn.Name.Substring(7, 1).ToInt();
 
-            var colID = btn.Name.Substring(7, 1).ToInt();
+            var colID = btn.Name.Substring(8, 1).ToInt();
 
             Debug.WriteLine($"Button click: row={rowID} col={colID}");
 

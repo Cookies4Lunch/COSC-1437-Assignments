@@ -25,7 +25,7 @@ namespace Middle_Tier_Tests
             ticTacToeGame.PlayerName.ShouldBe("Human"); // ie. player name property properly initialized
             ticTacToeGame.CheckForWinner().ShouldBeFalse(); // ie. no winner, yet
             ticTacToeGame.Winner.ShouldBe(CellOwners.Error); // winner property is not initialized (defaults to Error)
-            ticTacToeGame.IdentifyWinner().ShouldBeEmpty();
+            ticTacToeGame.IdentifyWinner().ShouldBe("Error");  //.ShouldBeEmpty();
         }
 
         [TestMethod]
