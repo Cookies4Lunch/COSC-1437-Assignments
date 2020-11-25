@@ -64,7 +64,7 @@ namespace Project_2_ThreadSafe
             {
                 if (!_done)
                 {
-                    Thread.Sleep(100);
+                    Thread.Sleep(10);
                     _done = true;
                     Console.WriteLine("Method 'Go' has been reached, _done is now true");
                 }

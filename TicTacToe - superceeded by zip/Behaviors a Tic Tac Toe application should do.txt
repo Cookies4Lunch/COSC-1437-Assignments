@@ -1,0 +1,25 @@
+1. The elements on the application should be:
+	-text box for the player name
+	-button to restart the game
+	-3x3 grid
+	-button to let the computer make a move
+	-set of buttons that allow the user to choose between X and O
+	-score counter on the top that with a designated reset button
+	-button to select player count (either 1 or 2)
+	-button to exit the game
+
+2. Game will not advance unless player's name is longer than 3 characters
+	-Name must be comp[osed of only characters, no numbers, symbols, etc.
+	
+3. Computers moves dictated by the following:
+	-First move is randomly selected
+	-Any following moves are done with the goal of creating as many 2-in-a-rows or 3-in-a-rows as possible until the computer or the user has won
+	-If the following step isnt possible, randomly select a spot
+
+4. Winning Conditions
+	-3 homogoneuos symbols in a row from either party
+	-In order for either party to gain 1 point on the score board they must meet winning conditions
+
+5. Losing / Tie Conditions
+	-When winning conditions are met, the player or computer that wins has its name displayed in a pop-up with a button to continue playing
+	-If a tie is met, a pop up declaring a tie shows up along with a button to continue playing

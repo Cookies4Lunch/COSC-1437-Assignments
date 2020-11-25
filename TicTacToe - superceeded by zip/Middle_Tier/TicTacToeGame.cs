@@ -212,10 +212,6 @@ namespace Middle_Tier
                         combination[2].CellOwner == CellOwners.Computer)
                     {
                         AssignCellOwner(combination[1].RowID, combination[1].ColID, CellOwners.Computer);
-                        /*
-                         * ProfReynolds2
-                         * You need a return here
-                         */
                     }
                 }
                 if (combination[2].CellOwner == CellOwners.Open)
