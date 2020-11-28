@@ -1,4 +1,5 @@
 ﻿namespace Presentation_Tier
+
 {
     partial class AboutBox1
     {
