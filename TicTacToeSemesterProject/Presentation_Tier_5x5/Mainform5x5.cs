@@ -7,9 +7,9 @@ using TicTacToe_Interfaces;
 
 //Spencer Johnson
 
-namespace Presentation_Tier
+namespace Presentation_Tier_5x5
 {
-    public partial class MainForm : Form
+    public partial class Mainform5x5 : Form
     {
         
 
@@ -19,11 +19,11 @@ namespace Presentation_Tier
         private Middle_Tier.TicTacToeGame _ticTacToeGame = new Middle_Tier.TicTacToeGame();
 
         
-        public MainForm()
+        public Mainform5x5()
         {
             InitializeComponent();
 
-            
+            _ticTacToeGame.GridSize = 5;
         }
 
         
@@ -77,7 +77,7 @@ namespace Presentation_Tier
         {
             // when button is clicked, this event is triggered, causing game to start over
             //MessageBox.Show("btnStartNewGame", "Button Click!");
-
+            btnGoComputer.Enabled = true;
 
             _ticTacToeGame.ResetGrid();
             foreach (var item in panel1.Controls)
@@ -91,13 +91,11 @@ namespace Presentation_Tier
                 }
             }
 
-            
-
         }
 
         private void btnGoComputer_Click(object sender, EventArgs e)
         {
-            
+            if (_ticTacToeGame.Winner != TicTacToe_Interfaces.CellOwners.Open) return;
 
             _ticTacToeGame.AutoPlayComputer();
 

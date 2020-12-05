@@ -23,14 +23,29 @@ namespace Presentation_Tier
         {
             InitializeComponent();
 
-            
+            _ticTacToeGame.GridSize = 3;
         }
 
         
 
+        /*
+         * ProfReynolds
+         * I rearranged the methods. Does not change the operation but makes it easier to follow:
+         * 1) constructor (MainForm) and never put anything other than InitializeComponent in the method
+         * 2) form events especially the load event
+         * 3) control events especially the click events
+         * 4) other event handlers such as the _ticTacToeGame.CellOwnerChanged
+         * 5) misc necessary methods (since very, very little implementation belongs in the UI, this should be limited)
+         */
+
         private void MainForm_Load(object sender, EventArgs e)
         {
-            
+            /*
+             * ProfReynolds
+             * I created this event method for you.
+             * check out the section in Unit 9: Presentation_Tier.MainForm
+             * this is where you need to connect the event from the _ticTacToe class to the CellOwnerChangedHandler
+             */
             _ticTacToeGame.CellOwnerChanged += this.CellOwnerChangedHandler;
         }
 
@@ -56,6 +71,15 @@ namespace Presentation_Tier
 
             btnStartNewGame.Enabled = playerNameIsValid;
             btnGoComputer.Enabled = playerNameIsValid;
+            //btnCell00.Enabled = PlayerNameIsValid;
+            //btnCell01.Enabled = PlayerNameIsValid;
+            //btnCell02.Enabled = PlayerNameIsValid;
+            //btnCell10.Enabled = PlayerNameIsValid;
+            //btnCell11.Enabled = PlayerNameIsValid;
+            //btnCell12.Enabled = PlayerNameIsValid;
+            //btnCell20.Enabled = PlayerNameIsValid;
+            //btnCell21.Enabled = PlayerNameIsValid;
+            //btnCell22.Enabled = PlayerNameIsValid;
             panel1.Enabled = playerNameIsValid;
 
 
@@ -84,27 +108,24 @@ namespace Presentation_Tier
             {
                 if (item is Button btn)
                 {
-                    if (btn.Name != "btnWildCard")
-                    {
-                        btn.Text = "?";
-                    }
+                    btn.Text = "?";
                 }
             }
-
-            
 
         }
 
         private void btnGoComputer_Click(object sender, EventArgs e)
         {
-            
+            // when button is clicked, the computer takes its turn
+
+            //MessageBox.Show("btnGoComputer", "Button Click!");
 
             _ticTacToeGame.AutoPlayComputer();
 
             if (_ticTacToeGame.CheckForWinner())
             {
                 MessageBox.Show("Computer", "The Winner!");
-                
+                // ProfReynolds - this would be better: MessageBox.Show("Computer","The Winner!");
             }
         }
 

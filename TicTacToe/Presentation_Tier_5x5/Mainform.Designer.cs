@@ -1,4 +1,4 @@
-﻿namespace Presentation_Tier
+﻿namespace Presentation_Tier_5x5
 {
     public partial class MainForm
     {

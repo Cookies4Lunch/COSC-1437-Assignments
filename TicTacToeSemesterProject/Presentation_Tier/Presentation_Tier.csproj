@@ -18,10 +18,4 @@
     <ProjectReference Include="..\TicTacToe_Interfaces\TicTacToe_Interfaces.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="Mainform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-  </ItemGroup>
-
 </Project>

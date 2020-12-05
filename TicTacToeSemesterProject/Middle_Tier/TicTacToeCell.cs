@@ -13,7 +13,12 @@ namespace Middle_Tier
         private const int MinimumColId = 0;
         private const int MaximumColId = 4;
 
+
+        
         private int _rowId;
+        /// <summary>
+        /// returns or sets row ID
+        /// </summary>
         public int RowID
         {
             get => _rowId;
@@ -27,8 +32,11 @@ namespace Middle_Tier
                 _rowId = value;
             }
         }
-
+        
         private int _colId;
+        /// <summary>
+        /// returns or sets the column ID
+        /// </summary>
         public int ColID
         {
             get => _colId;

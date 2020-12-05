@@ -7,7 +7,7 @@ using TicTacToe_Interfaces;
 
 //Spencer Johnson
 
-namespace Presentation_Tier
+namespace Presentation_Tier_5x5
 {
     public partial class MainForm : Form
     {
@@ -84,14 +84,9 @@ namespace Presentation_Tier
             {
                 if (item is Button btn)
                 {
-                    if (btn.Name != "btnWildCard")
-                    {
-                        btn.Text = "?";
-                    }
+                    btn.Text = "?";
                 }
             }
-
-            
 
         }
 
@@ -108,10 +103,7 @@ namespace Presentation_Tier
             }
         }
 
-        /*
-         * ProfReynolds
-         * this single event method services all 9 buttons
-         */
+       
         private void btnCellxx_Click(object sender, EventArgs e)
         {
             if (_ticTacToeGame.Winner != TicTacToe_Interfaces.CellOwners.Open) return;

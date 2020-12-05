@@ -1,6 +1,6 @@
-﻿namespace Presentation_Tier
+﻿namespace Presentation_Tier_5x5
 {
-    public partial class MainForm
+    public partial class Mainform5x5
     {
         /// <summary>
         ///  Required designer variable.
@@ -43,22 +43,22 @@
             this.btnCell21 = new System.Windows.Forms.Button();
             this.btnWildCard = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCell03 = new System.Windows.Forms.Button();
-            this.btnCell04 = new System.Windows.Forms.Button();
-            this.btnCell13 = new System.Windows.Forms.Button();
-            this.btnCell14 = new System.Windows.Forms.Button();
-            this.btnCell23 = new System.Windows.Forms.Button();
-            this.btnCell24 = new System.Windows.Forms.Button();
-            this.btnCell30 = new System.Windows.Forms.Button();
-            this.btnCell31 = new System.Windows.Forms.Button();
-            this.btnCell32 = new System.Windows.Forms.Button();
-            this.btnCell33 = new System.Windows.Forms.Button();
-            this.btnCell34 = new System.Windows.Forms.Button();
-            this.btnCell40 = new System.Windows.Forms.Button();
-            this.btnCell41 = new System.Windows.Forms.Button();
-            this.btnCell42 = new System.Windows.Forms.Button();
-            this.btnCell43 = new System.Windows.Forms.Button();
             this.btnCell44 = new System.Windows.Forms.Button();
+            this.btnCell43 = new System.Windows.Forms.Button();
+            this.btnCell42 = new System.Windows.Forms.Button();
+            this.btnCell41 = new System.Windows.Forms.Button();
+            this.btnCell40 = new System.Windows.Forms.Button();
+            this.btnCell34 = new System.Windows.Forms.Button();
+            this.btnCell33 = new System.Windows.Forms.Button();
+            this.btnCell32 = new System.Windows.Forms.Button();
+            this.btnCell31 = new System.Windows.Forms.Button();
+            this.btnCell30 = new System.Windows.Forms.Button();
+            this.btnCell24 = new System.Windows.Forms.Button();
+            this.btnCell23 = new System.Windows.Forms.Button();
+            this.btnCell14 = new System.Windows.Forms.Button();
+            this.btnCell13 = new System.Windows.Forms.Button();
+            this.btnCell04 = new System.Windows.Forms.Button();
+            this.btnCell03 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,6 +85,7 @@
             // 
             // btnGoComputer
             // 
+            this.btnGoComputer.Enabled = false;
             this.btnGoComputer.Location = new System.Drawing.Point(13, 84);
             this.btnGoComputer.Name = "btnGoComputer";
             this.btnGoComputer.Size = new System.Drawing.Size(175, 36);
@@ -203,6 +204,7 @@
             // 
             // btnWildCard
             // 
+            this.btnWildCard.Enabled = false;
             this.btnWildCard.Font = new System.Drawing.Font("Comic Sans MS", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnWildCard.Location = new System.Drawing.Point(203, 199);
             this.btnWildCard.Name = "btnWildCard";
@@ -244,159 +246,16 @@
             this.panel1.Size = new System.Drawing.Size(495, 488);
             this.panel1.TabIndex = 6;
             // 
-            // btnCell03
+            // btnCell44
             // 
-            this.btnCell03.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCell03.Location = new System.Drawing.Point(294, 17);
-            this.btnCell03.Name = "btnCell03";
-            this.btnCell03.Size = new System.Drawing.Size(85, 85);
-            this.btnCell03.TabIndex = 5;
-            this.btnCell03.Text = "?";
-            this.btnCell03.UseVisualStyleBackColor = true;
-            this.btnCell03.Click += new System.EventHandler(this.btnCellxx_Click);
-            // 
-            // btnCell04
-            // 
-            this.btnCell04.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCell04.Location = new System.Drawing.Point(385, 17);
-            this.btnCell04.Name = "btnCell04";
-            this.btnCell04.Size = new System.Drawing.Size(85, 85);
-            this.btnCell04.TabIndex = 5;
-            this.btnCell04.Text = "?";
-            this.btnCell04.UseVisualStyleBackColor = true;
-            this.btnCell04.Click += new System.EventHandler(this.btnCellxx_Click);
-            // 
-            // btnCell13
-            // 
-            this.btnCell13.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCell13.Location = new System.Drawing.Point(294, 108);
-            this.btnCell13.Name = "btnCell13";
-            this.btnCell13.Size = new System.Drawing.Size(85, 85);
-            this.btnCell13.TabIndex = 5;
-            this.btnCell13.Text = "?";
-            this.btnCell13.UseVisualStyleBackColor = true;
-            this.btnCell13.Click += new System.EventHandler(this.btnCellxx_Click);
-            // 
-            // btnCell14
-            // 
-            this.btnCell14.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCell14.Location = new System.Drawing.Point(385, 108);
-            this.btnCell14.Name = "btnCell14";
-            this.btnCell14.Size = new System.Drawing.Size(85, 85);
-            this.btnCell14.TabIndex = 5;
-            this.btnCell14.Text = "?";
-            this.btnCell14.UseVisualStyleBackColor = true;
-            this.btnCell14.Click += new System.EventHandler(this.btnCellxx_Click);
-            // 
-            // btnCell23
-            // 
-            this.btnCell23.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCell23.Location = new System.Drawing.Point(294, 199);
-            this.btnCell23.Name = "btnCell23";
-            this.btnCell23.Size = new System.Drawing.Size(85, 85);
-            this.btnCell23.TabIndex = 5;
-            this.btnCell23.Text = "?";
-            this.btnCell23.UseVisualStyleBackColor = true;
-            this.btnCell23.Click += new System.EventHandler(this.btnCellxx_Click);
-            // 
-            // btnCell24
-            // 
-            this.btnCell24.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCell24.Location = new System.Drawing.Point(385, 199);
-            this.btnCell24.Name = "btnCell24";
-            this.btnCell24.Size = new System.Drawing.Size(85, 85);
-            this.btnCell24.TabIndex = 5;
-            this.btnCell24.Text = "?";
-            this.btnCell24.UseVisualStyleBackColor = true;
-            this.btnCell24.Click += new System.EventHandler(this.btnCellxx_Click);
-            // 
-            // btnCell30
-            // 
-            this.btnCell30.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCell30.Location = new System.Drawing.Point(21, 290);
-            this.btnCell30.Name = "btnCell30";
-            this.btnCell30.Size = new System.Drawing.Size(85, 85);
-            this.btnCell30.TabIndex = 5;
-            this.btnCell30.Text = "?";
-            this.btnCell30.UseVisualStyleBackColor = true;
-            this.btnCell30.Click += new System.EventHandler(this.btnCellxx_Click);
-            // 
-            // btnCell31
-            // 
-            this.btnCell31.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCell31.Location = new System.Drawing.Point(112, 290);
-            this.btnCell31.Name = "btnCell31";
-            this.btnCell31.Size = new System.Drawing.Size(85, 85);
-            this.btnCell31.TabIndex = 5;
-            this.btnCell31.Text = "?";
-            this.btnCell31.UseVisualStyleBackColor = true;
-            this.btnCell31.Click += new System.EventHandler(this.btnCellxx_Click);
-            // 
-            // btnCell32
-            // 
-            this.btnCell32.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCell32.Location = new System.Drawing.Point(203, 290);
-            this.btnCell32.Name = "btnCell32";
-            this.btnCell32.Size = new System.Drawing.Size(85, 85);
-            this.btnCell32.TabIndex = 5;
-            this.btnCell32.Text = "?";
-            this.btnCell32.UseVisualStyleBackColor = true;
-            this.btnCell32.Click += new System.EventHandler(this.btnCellxx_Click);
-            // 
-            // btnCell33
-            // 
-            this.btnCell33.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCell33.Location = new System.Drawing.Point(294, 290);
-            this.btnCell33.Name = "btnCell33";
-            this.btnCell33.Size = new System.Drawing.Size(85, 85);
-            this.btnCell33.TabIndex = 5;
-            this.btnCell33.Text = "?";
-            this.btnCell33.UseVisualStyleBackColor = true;
-            this.btnCell33.Click += new System.EventHandler(this.btnCellxx_Click);
-            // 
-            // btnCell34
-            // 
-            this.btnCell34.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCell34.Location = new System.Drawing.Point(385, 290);
-            this.btnCell34.Name = "btnCell34";
-            this.btnCell34.Size = new System.Drawing.Size(85, 85);
-            this.btnCell34.TabIndex = 5;
-            this.btnCell34.Text = "?";
-            this.btnCell34.UseVisualStyleBackColor = true;
-            this.btnCell34.Click += new System.EventHandler(this.btnCellxx_Click);
-            // 
-            // btnCell40
-            // 
-            this.btnCell40.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCell40.Location = new System.Drawing.Point(21, 381);
-            this.btnCell40.Name = "btnCell40";
-            this.btnCell40.Size = new System.Drawing.Size(85, 85);
-            this.btnCell40.TabIndex = 5;
-            this.btnCell40.Text = "?";
-            this.btnCell40.UseVisualStyleBackColor = true;
-            this.btnCell40.Click += new System.EventHandler(this.btnCellxx_Click);
-            // 
-            // btnCell41
-            // 
-            this.btnCell41.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCell41.Location = new System.Drawing.Point(112, 381);
-            this.btnCell41.Name = "btnCell41";
-            this.btnCell41.Size = new System.Drawing.Size(85, 85);
-            this.btnCell41.TabIndex = 5;
-            this.btnCell41.Text = "?";
-            this.btnCell41.UseVisualStyleBackColor = true;
-            this.btnCell41.Click += new System.EventHandler(this.btnCellxx_Click);
-            // 
-            // btnCell42
-            // 
-            this.btnCell42.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCell42.Location = new System.Drawing.Point(203, 381);
-            this.btnCell42.Name = "btnCell42";
-            this.btnCell42.Size = new System.Drawing.Size(85, 85);
-            this.btnCell42.TabIndex = 5;
-            this.btnCell42.Text = "?";
-            this.btnCell42.UseVisualStyleBackColor = true;
-            this.btnCell42.Click += new System.EventHandler(this.btnCellxx_Click);
+            this.btnCell44.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCell44.Location = new System.Drawing.Point(385, 381);
+            this.btnCell44.Name = "btnCell44";
+            this.btnCell44.Size = new System.Drawing.Size(85, 85);
+            this.btnCell44.TabIndex = 5;
+            this.btnCell44.Text = "?";
+            this.btnCell44.UseVisualStyleBackColor = true;
+            this.btnCell44.Click += new System.EventHandler(this.btnCellxx_Click);
             // 
             // btnCell43
             // 
@@ -409,16 +268,159 @@
             this.btnCell43.UseVisualStyleBackColor = true;
             this.btnCell43.Click += new System.EventHandler(this.btnCellxx_Click);
             // 
-            // btnCell44
+            // btnCell42
             // 
-            this.btnCell44.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCell44.Location = new System.Drawing.Point(385, 381);
-            this.btnCell44.Name = "btnCell44";
-            this.btnCell44.Size = new System.Drawing.Size(85, 85);
-            this.btnCell44.TabIndex = 5;
-            this.btnCell44.Text = "?";
-            this.btnCell44.UseVisualStyleBackColor = true;
-            this.btnCell44.Click += new System.EventHandler(this.btnCellxx_Click);
+            this.btnCell42.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCell42.Location = new System.Drawing.Point(203, 381);
+            this.btnCell42.Name = "btnCell42";
+            this.btnCell42.Size = new System.Drawing.Size(85, 85);
+            this.btnCell42.TabIndex = 5;
+            this.btnCell42.Text = "?";
+            this.btnCell42.UseVisualStyleBackColor = true;
+            this.btnCell42.Click += new System.EventHandler(this.btnCellxx_Click);
+            // 
+            // btnCell41
+            // 
+            this.btnCell41.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCell41.Location = new System.Drawing.Point(112, 381);
+            this.btnCell41.Name = "btnCell41";
+            this.btnCell41.Size = new System.Drawing.Size(85, 85);
+            this.btnCell41.TabIndex = 5;
+            this.btnCell41.Text = "?";
+            this.btnCell41.UseVisualStyleBackColor = true;
+            this.btnCell41.Click += new System.EventHandler(this.btnCellxx_Click);
+            // 
+            // btnCell40
+            // 
+            this.btnCell40.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCell40.Location = new System.Drawing.Point(21, 381);
+            this.btnCell40.Name = "btnCell40";
+            this.btnCell40.Size = new System.Drawing.Size(85, 85);
+            this.btnCell40.TabIndex = 5;
+            this.btnCell40.Text = "?";
+            this.btnCell40.UseVisualStyleBackColor = true;
+            this.btnCell40.Click += new System.EventHandler(this.btnCellxx_Click);
+            // 
+            // btnCell34
+            // 
+            this.btnCell34.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCell34.Location = new System.Drawing.Point(385, 290);
+            this.btnCell34.Name = "btnCell34";
+            this.btnCell34.Size = new System.Drawing.Size(85, 85);
+            this.btnCell34.TabIndex = 5;
+            this.btnCell34.Text = "?";
+            this.btnCell34.UseVisualStyleBackColor = true;
+            this.btnCell34.Click += new System.EventHandler(this.btnCellxx_Click);
+            // 
+            // btnCell33
+            // 
+            this.btnCell33.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCell33.Location = new System.Drawing.Point(294, 290);
+            this.btnCell33.Name = "btnCell33";
+            this.btnCell33.Size = new System.Drawing.Size(85, 85);
+            this.btnCell33.TabIndex = 5;
+            this.btnCell33.Text = "?";
+            this.btnCell33.UseVisualStyleBackColor = true;
+            this.btnCell33.Click += new System.EventHandler(this.btnCellxx_Click);
+            // 
+            // btnCell32
+            // 
+            this.btnCell32.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCell32.Location = new System.Drawing.Point(203, 290);
+            this.btnCell32.Name = "btnCell32";
+            this.btnCell32.Size = new System.Drawing.Size(85, 85);
+            this.btnCell32.TabIndex = 5;
+            this.btnCell32.Text = "?";
+            this.btnCell32.UseVisualStyleBackColor = true;
+            this.btnCell32.Click += new System.EventHandler(this.btnCellxx_Click);
+            // 
+            // btnCell31
+            // 
+            this.btnCell31.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCell31.Location = new System.Drawing.Point(112, 290);
+            this.btnCell31.Name = "btnCell31";
+            this.btnCell31.Size = new System.Drawing.Size(85, 85);
+            this.btnCell31.TabIndex = 5;
+            this.btnCell31.Text = "?";
+            this.btnCell31.UseVisualStyleBackColor = true;
+            this.btnCell31.Click += new System.EventHandler(this.btnCellxx_Click);
+            // 
+            // btnCell30
+            // 
+            this.btnCell30.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCell30.Location = new System.Drawing.Point(21, 290);
+            this.btnCell30.Name = "btnCell30";
+            this.btnCell30.Size = new System.Drawing.Size(85, 85);
+            this.btnCell30.TabIndex = 5;
+            this.btnCell30.Text = "?";
+            this.btnCell30.UseVisualStyleBackColor = true;
+            this.btnCell30.Click += new System.EventHandler(this.btnCellxx_Click);
+            // 
+            // btnCell24
+            // 
+            this.btnCell24.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCell24.Location = new System.Drawing.Point(385, 199);
+            this.btnCell24.Name = "btnCell24";
+            this.btnCell24.Size = new System.Drawing.Size(85, 85);
+            this.btnCell24.TabIndex = 5;
+            this.btnCell24.Text = "?";
+            this.btnCell24.UseVisualStyleBackColor = true;
+            this.btnCell24.Click += new System.EventHandler(this.btnCellxx_Click);
+            // 
+            // btnCell23
+            // 
+            this.btnCell23.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCell23.Location = new System.Drawing.Point(294, 199);
+            this.btnCell23.Name = "btnCell23";
+            this.btnCell23.Size = new System.Drawing.Size(85, 85);
+            this.btnCell23.TabIndex = 5;
+            this.btnCell23.Text = "?";
+            this.btnCell23.UseVisualStyleBackColor = true;
+            this.btnCell23.Click += new System.EventHandler(this.btnCellxx_Click);
+            // 
+            // btnCell14
+            // 
+            this.btnCell14.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCell14.Location = new System.Drawing.Point(385, 108);
+            this.btnCell14.Name = "btnCell14";
+            this.btnCell14.Size = new System.Drawing.Size(85, 85);
+            this.btnCell14.TabIndex = 5;
+            this.btnCell14.Text = "?";
+            this.btnCell14.UseVisualStyleBackColor = true;
+            this.btnCell14.Click += new System.EventHandler(this.btnCellxx_Click);
+            // 
+            // btnCell13
+            // 
+            this.btnCell13.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCell13.Location = new System.Drawing.Point(294, 108);
+            this.btnCell13.Name = "btnCell13";
+            this.btnCell13.Size = new System.Drawing.Size(85, 85);
+            this.btnCell13.TabIndex = 5;
+            this.btnCell13.Text = "?";
+            this.btnCell13.UseVisualStyleBackColor = true;
+            this.btnCell13.Click += new System.EventHandler(this.btnCellxx_Click);
+            // 
+            // btnCell04
+            // 
+            this.btnCell04.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCell04.Location = new System.Drawing.Point(385, 17);
+            this.btnCell04.Name = "btnCell04";
+            this.btnCell04.Size = new System.Drawing.Size(85, 85);
+            this.btnCell04.TabIndex = 5;
+            this.btnCell04.Text = "?";
+            this.btnCell04.UseVisualStyleBackColor = true;
+            this.btnCell04.Click += new System.EventHandler(this.btnCellxx_Click);
+            // 
+            // btnCell03
+            // 
+            this.btnCell03.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCell03.Location = new System.Drawing.Point(294, 17);
+            this.btnCell03.Name = "btnCell03";
+            this.btnCell03.Size = new System.Drawing.Size(85, 85);
+            this.btnCell03.TabIndex = 5;
+            this.btnCell03.Text = "?";
+            this.btnCell03.UseVisualStyleBackColor = true;
+            this.btnCell03.Click += new System.EventHandler(this.btnCellxx_Click);
             // 
             // MainForm
             // 

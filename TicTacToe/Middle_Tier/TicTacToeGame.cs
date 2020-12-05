@@ -63,8 +63,9 @@ namespace Middle_Tier
             Winner = CellOwners.Open;
 
             // create the 9 cells
-            for (var rowNo = 0; rowNo < 3; rowNo++)
-                for (var colNo = 0; colNo < 3; colNo++)
+            for (var rowNo = 0; rowNo < 5; rowNo++)
+            {
+                for (var colNo = 0; colNo < 5; colNo++)
                 {
                     _ticTacToeCells.Add(new TicTacToeCell
                     {
@@ -72,6 +73,7 @@ namespace Middle_Tier
                         ColID = colNo
                     });
                 }
+            }
 
             _goodNextMove = new Collection<TicTacToeCell>()
             {
@@ -88,59 +90,187 @@ namespace Middle_Tier
 
             _winningCombinations = new Collection<Collection<TicTacToeCell>>()
             {
-                new Collection<TicTacToeCell>() // loading the first row
+                #region 5x5 Rows
+                //new Collection<TicTacToeCell>() // loading the first row
+                //{
+                //    // the reference to these objects is in the collection - not new ones!
+                //    _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==0),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==1),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==2),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==3),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==4)
+                //},
+                //new Collection<TicTacToeCell>() // loading the second row
+                //{
+                //    _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==0),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==1),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==2),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==3),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==4)
+                //},
+                //new Collection<TicTacToeCell>() // loading the third row
+                //{
+                //    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==0),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==1),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==2),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==3),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==4)
+                //},
+                //new Collection<TicTacToeCell>() // loading the fourth row
+                //{
+                //    _ticTacToeCells.First(tttc => tttc.RowID==3 && tttc.ColID==0),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==3 && tttc.ColID==1),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==3 && tttc.ColID==2),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==3 && tttc.ColID==3),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==3 && tttc.ColID==4)
+                //},
+                //new Collection<TicTacToeCell>() // loading the fifth row
+                //{
+                //    _ticTacToeCells.First(tttc => tttc.RowID==4 && tttc.ColID==0),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==4 && tttc.ColID==1),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==4 && tttc.ColID==2),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==4 && tttc.ColID==3),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==4 && tttc.ColID==4)
+                //},
+                #endregion
+
+                //First Diagonal
+                new Collection<TicTacToeCell>() 
                 {
-                    // the reference to these objects is in the collection - not new ones!
                     _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==0),
-                    _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==1),
-                    _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==2)
-                },
-                new Collection<TicTacToeCell>() // loading the second row
-                {
-                    _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==0),
                     _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==1),
-                    _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==2)
-                },
-                new Collection<TicTacToeCell>()
-                {
-                    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==0),
-                    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==1),
-                    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==2)
-                },
-                new Collection<TicTacToeCell>() // loading the first column
-                {
-                    _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==0),
-                    _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==0),
-                    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==0)
-                },
-                new Collection<TicTacToeCell>() // loading the second column
-                {
-                    _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==1),
-                    _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==1),
-                    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==1)
-                },
-                new Collection<TicTacToeCell>() // loading the third column
-                {
-                    _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==2),
-                    _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==2),
-                    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==2)
+                    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==2),
+                    _ticTacToeCells.First(tttc => tttc.RowID==3 && tttc.ColID==3),
+                    _ticTacToeCells.First(tttc => tttc.RowID==4 && tttc.ColID==4)
                 },
 
-                new Collection<TicTacToeCell>() // loading beginning diagonal
-                {
-                    _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==2),
-                    _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==1),
-                    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==0)
-                },
-                new Collection<TicTacToeCell>() // loading final diagonal
+                //Second Diagonal
+                new Collection<TicTacToeCell>() 
                 {
                     _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==0),
                     _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==1),
-                    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==2)
+                    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==2),
+                    _ticTacToeCells.First(tttc => tttc.RowID==3 && tttc.ColID==3),
+                    _ticTacToeCells.First(tttc => tttc.RowID==4 && tttc.ColID==4)
                 },
+                
+
+
+                #region 5x5 Columns
+                //new Collection<TicTacToeCell>() // loading the first row
+                //{
+                //    // the reference to these objects is in the collection - not new ones!
+                //    _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==0),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==0),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==0),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==3 && tttc.ColID==0),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==4 && tttc.ColID==0)
+                //},
+                //new Collection<TicTacToeCell>() // loading the second row
+                //{
+                //    _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==1),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==1),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==1),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==3 && tttc.ColID==1),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==4 && tttc.ColID==1)
+                //},
+                //new Collection<TicTacToeCell>() // loading the third row
+                //{
+                //    _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==2),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==2),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==2),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==3 && tttc.ColID==2),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==4 && tttc.ColID==2)
+                //},
+                //new Collection<TicTacToeCell>() // loading the fourth row
+                //{
+                //    _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==3),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==3),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==3),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==3 && tttc.ColID==3),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==4 && tttc.ColID==3)
+                //},
+                //new Collection<TicTacToeCell>() // loading the fifth row
+                //{
+                //    _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==4),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==4),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==4),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==3 && tttc.ColID==4),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==4 && tttc.ColID==4)
+                //},
+                #endregion
+
+                #region 3x3
+                //new Collection<TicTacToeCell>()
+                //{
+                //    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==0),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==1),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==2)
+                //},
+                //new Collection<TicTacToeCell>() // loading the first column
+                //{
+                //    _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==0),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==0),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==0)
+                //},
+                //new Collection<TicTacToeCell>() // loading the second column
+                //{
+                //    _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==1),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==1),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==1)
+                //},
+                //new Collection<TicTacToeCell>() // loading the third column
+                //{
+                //    _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==2),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==2),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==2)
+                //},
+
+                //new Collection<TicTacToeCell>() // loading beginning diagonal
+                //{
+                //    _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==2),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==1),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==0)
+                //},
+                //new Collection<TicTacToeCell>() // loading final diagonal
+                //{
+                //    _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==0),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==1),
+                //    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==2)
+                //},
+
+                #endregion
             };
 
             
+
+            for (int row = 0; row < 5; row++)
+            {
+                
+
+                var combo = new Collection<TicTacToeCell>();
+
+                for (int col = 0; col < 5; col++)
+                {
+                    combo.Add(_ticTacToeCells.First(tttc => tttc.RowID == row && tttc.ColID == col));
+                }
+
+                _winningCombinations.Add(combo);
+            }
+
+            for (int col = 0; col < 5; col++)
+            {
+                
+
+                var combo = new Collection<TicTacToeCell>();
+
+                for (int row = 0; row < 5; row++)
+                {
+                    combo.Add(_ticTacToeCells.First(tttc => tttc.RowID == row && tttc.ColID == col));
+                }
+
+                _winningCombinations.Add(combo);
+            }
 
         }
 
@@ -186,17 +316,7 @@ namespace Middle_Tier
 
         public void AutoPlayComputer()
         {
-            /*
-             * ProfReynolds
-             * You are missing much here
-             */
-
-
-            /*
-             * ProfReynolds
-             * First, you must look to find a possible winning move
-             * this will get you started
-             */
+            
             foreach (var combination in _winningCombinations)
             {
                 if (combination[0].CellOwner == CellOwners.Open)
@@ -214,10 +334,7 @@ namespace Middle_Tier
                         combination[2].CellOwner == CellOwners.Computer)
                     {
                         AssignCellOwner(combination[1].RowID, combination[1].ColID, CellOwners.Computer);
-                        /*
-                         * ProfReynolds2
-                         * You need a return here
-                         */
+                        return;
                     }
                 }
                 if (combination[2].CellOwner == CellOwners.Open)
@@ -449,8 +566,20 @@ namespace Middle_Tier
                     if ((firstCell.CellOwner != CellOwners.Computer) &&
                         (firstCell.CellOwner != CellOwners.Human)) continue;
 
-                    if ((firstCell.CellOwner != combination[1].CellOwner) ||
-                        (firstCell.CellOwner != combination[2].CellOwner)) continue;
+                    if (combination[2].RowID == 2 && combination[2].ColID == 2)
+                    {
+                        if ((firstCell.CellOwner != combination[1].CellOwner) ||
+                           //(firstCell.CellOwner != combination[2].CellOwner) ||
+                           (firstCell.CellOwner != combination[3].CellOwner) ||
+                           (firstCell.CellOwner != combination[4].CellOwner)) continue;
+                    }
+                    else
+                    {
+                        if ((firstCell.CellOwner != combination[1].CellOwner) ||
+                           (firstCell.CellOwner != combination[2].CellOwner) ||
+                           (firstCell.CellOwner != combination[3].CellOwner) ||
+                           (firstCell.CellOwner != combination[4].CellOwner)) continue;
+                    }
 
                     Winner = firstCell.CellOwner;
 

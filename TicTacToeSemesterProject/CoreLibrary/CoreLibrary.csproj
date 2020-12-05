@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>CoreLibraries</PackageId>
+    <Company>Lone Star College Systems</Company>
+    <Product>CoreLibraries</Product>
+  </PropertyGroup>
+
+</Project>
