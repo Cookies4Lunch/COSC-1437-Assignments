@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using TicTacToe_Interfaces;
 using System.Linq;
 
@@ -398,283 +399,354 @@ namespace Middle_Tier
         /// <summary>
         /// Is supposed to determine an effective block or a winning move for the computer
         /// </summary>
-        public void AutoPlayComputer()
+        //public void AutoPlayComputer()
+        //{
+
+        //    foreach (var combination in _winningCombinations)
+        //    {
+        //        if (combination[0].CellOwner == CellOwners.Open)
+        //        {
+        //            if (combination[1].CellOwner == CellOwners.Computer &&
+        //                combination[2].CellOwner == CellOwners.Computer)
+        //            {
+        //                AssignCellOwner(combination[0].RowID, combination[0].ColID, CellOwners.Computer);
+        //                return;
+        //            }
+        //        }
+        //        if (combination[1].CellOwner == CellOwners.Open)
+        //        {
+        //            if (combination[0].CellOwner == CellOwners.Computer &&
+        //                combination[2].CellOwner == CellOwners.Computer)
+        //            {
+        //                AssignCellOwner(combination[1].RowID, combination[1].ColID, CellOwners.Computer);
+        //                return;
+        //            }
+        //        }
+        //        if (combination[2].CellOwner == CellOwners.Open)
+        //        {
+        //            if (combination[0].CellOwner == CellOwners.Computer &&
+        //                combination[1].CellOwner == CellOwners.Computer)
+        //            {
+        //                AssignCellOwner(combination[2].RowID, combination[2].ColID, CellOwners.Computer);
+        //                return;
+        //            }
+        //        }
+        //    }
+
+
+        //    /*
+        //     * ProfReynolds
+        //     * Second, you must look to find a necessary blocking move to prevent the human from winning
+        //     * this will get you started
+        //     */
+        //    foreach (var combination in _winningCombinations)
+        //    {
+        //        if (combination[0].CellOwner == CellOwners.Open)
+        //        {
+        //            if (combination[1].CellOwner == CellOwners.Human &&
+        //                combination[2].CellOwner == CellOwners.Human)
+        //            {
+        //                AssignCellOwner(combination[0].RowID, combination[0].ColID, CellOwners.Computer);
+        //                return;
+        //            }
+        //        }
+        //        if (combination[1].CellOwner == CellOwners.Open)
+        //        {
+        //            if (combination[0].CellOwner == CellOwners.Human &&
+        //                combination[2].CellOwner == CellOwners.Human)
+        //            {
+        //                AssignCellOwner(combination[1].RowID, combination[1].ColID, CellOwners.Computer);
+        //                return;
+        //            }
+        //        }
+        //        if (combination[2].CellOwner == CellOwners.Open)
+        //        {
+        //            if (combination[0].CellOwner == CellOwners.Human &&
+        //                combination[1].CellOwner == CellOwners.Human)
+        //            {
+        //                AssignCellOwner(combination[2].RowID, combination[2].ColID, CellOwners.Computer);
+        //                return;
+        //            }
+        //        }
+        //    }
+
+
+        //    foreach (var targetCell in _goodNextMove)
+        //    {
+        //        if (targetCell.CellOwner == CellOwners.Open)
+        //        {
+
+        //            AssignCellOwner(targetCell.RowID, targetCell.ColID, CellOwners.Computer);
+        //            return;
+
+        //        }
+        //    }
+        //}
+        public void AutoPlayComputer() // profreynolds version
         {
-            
-            foreach (var combination in _winningCombinations)
+            bool SearchForPlayerReadyToWin(CellOwners checkingCellOwner)
             {
-                if (combination[0].CellOwner == CellOwners.Open)
+                foreach (var combination in _winningCombinations)
+                foreach (var targetCell in combination.Where(tttc => tttc.CellOwner == CellOwners.Open))
                 {
-                    if (combination[1].CellOwner == CellOwners.Computer &&
-                        combination[2].CellOwner == CellOwners.Computer)
-                    {
-                        AssignCellOwner(combination[0].RowID, combination[0].ColID, CellOwners.Computer);
-                        return;
-                    }
-                }
-                if (combination[1].CellOwner == CellOwners.Open)
-                {
-                    if (combination[0].CellOwner == CellOwners.Computer &&
-                        combination[2].CellOwner == CellOwners.Computer)
-                    {
-                        AssignCellOwner(combination[1].RowID, combination[1].ColID, CellOwners.Computer);
-                        return;
-                    }
-                }
-                if (combination[2].CellOwner == CellOwners.Open)
-                {
-                    if (combination[0].CellOwner == CellOwners.Computer &&
-                        combination[1].CellOwner == CellOwners.Computer)
-                    {
-                        AssignCellOwner(combination[2].RowID, combination[2].ColID, CellOwners.Computer);
-                        return;
-                    }
-                }
-            }
+                    if (combination
+                        .Count(tttc =>
+                            tttc != targetCell &&
+                            tttc.CellOwner != checkingCellOwner) > 0)
+                        break;
 
-
-            /*
-             * ProfReynolds
-             * Second, you must look to find a necessary blocking move to prevent the human from winning
-             * this will get you started
-             */
-            foreach (var combination in _winningCombinations)
-            {
-                if (combination[0].CellOwner == CellOwners.Open)
-                {
-                    if (combination[1].CellOwner == CellOwners.Human &&
-                        combination[2].CellOwner == CellOwners.Human)
-                    {
-                        AssignCellOwner(combination[0].RowID, combination[0].ColID, CellOwners.Computer);
-                        return;
-                    }
-                }
-                if (combination[1].CellOwner == CellOwners.Open)
-                {
-                    if (combination[0].CellOwner == CellOwners.Human &&
-                        combination[2].CellOwner == CellOwners.Human)
-                    {
-                        AssignCellOwner(combination[1].RowID, combination[1].ColID, CellOwners.Computer);
-                        return;
-                    }
-                }
-                if (combination[2].CellOwner == CellOwners.Open)
-                {
-                    if (combination[0].CellOwner == CellOwners.Human &&
-                        combination[1].CellOwner == CellOwners.Human)
-                    {
-                        AssignCellOwner(combination[2].RowID, combination[2].ColID, CellOwners.Computer);
-                        return;
-                    }
-                }
-            }
-
-
-            foreach (var targetCell in _goodNextMove)
-            {
-                if (targetCell.CellOwner == CellOwners.Open)
-                {
-                    
                     AssignCellOwner(targetCell.RowID, targetCell.ColID, CellOwners.Computer);
-                    return;
-
+                    return true;
                 }
+
+                return false;
             }
+
+            if (_ticTacToeCells.Count == 0) return;
+
+            if (Winner == CellOwners.Computer || Winner == CellOwners.Human) return;
+
+
+            if (SearchForPlayerReadyToWin(CellOwners.Computer)) return;
+            if (SearchForPlayerReadyToWin(CellOwners.Human)) return;
+
+            var winningCell = _goodNextMove
+                .FirstOrDefault(tttc => tttc.CellOwner == CellOwners.Open);
+            if (winningCell != null)
+                AssignCellOwner(winningCell.RowID, winningCell.ColID, CellOwners.Computer);
         }
+
 
         /// <summary>
         /// Reads through an array of combinations to check for a a winning combination
         /// </summary>
         /// <returns></returns>
+        //public bool CheckForWinner()
+        //{
+
+        //    #region Human
+        //    ////first row
+        //    //if ((IdentifyCellOwner(0, 0) == CellOwners.Human) &&
+        //    //   (IdentifyCellOwner(0, 1) == CellOwners.Human) &&
+        //    //   (IdentifyCellOwner(0, 2) == CellOwners.Human))
+        //    //{
+        //    //    Winner = CellOwners.Human;
+        //    //    return true;
+        //    //}
+
+        //    ////second row
+        //    //if ((IdentifyCellOwner(1, 0) == CellOwners.Human) &&
+        //    //   (IdentifyCellOwner(1, 1) == CellOwners.Human) &&
+        //    //   (IdentifyCellOwner(1, 2) == CellOwners.Human))
+        //    //{
+        //    //    Winner = CellOwners.Human;
+        //    //    return true;
+        //    //}
+
+        //    ////third row
+        //    //if ((IdentifyCellOwner(2, 0) == CellOwners.Human) &&
+        //    //   (IdentifyCellOwner(2, 1) == CellOwners.Human) &&
+        //    //   (IdentifyCellOwner(2, 2) == CellOwners.Human))
+        //    //{
+        //    //    Winner = CellOwners.Human;
+        //    //    return true;
+        //    //}
+
+
+
+        //    ////first column
+        //    //if ((IdentifyCellOwner(0, 0) == CellOwners.Human) &&
+        //    //   (IdentifyCellOwner(1, 0) == CellOwners.Human) &&
+        //    //   (IdentifyCellOwner(2, 0) == CellOwners.Human))
+        //    //{
+        //    //    Winner = CellOwners.Human;
+        //    //    return true;
+        //    //}
+
+        //    ////second column 
+        //    //if ((IdentifyCellOwner(0, 1) == CellOwners.Human) &&
+        //    //   (IdentifyCellOwner(1, 1) == CellOwners.Human) &&
+        //    //   (IdentifyCellOwner(2, 1) == CellOwners.Human))
+        //    //{
+        //    //    Winner = CellOwners.Human;
+        //    //    return true;
+        //    //}
+
+        //    ////third column
+        //    //if ((IdentifyCellOwner(0, 2) == CellOwners.Human) &&
+        //    //   (IdentifyCellOwner(1, 2) == CellOwners.Human) &&
+        //    //   (IdentifyCellOwner(2, 2) == CellOwners.Human))
+        //    //{
+        //    //    Winner = CellOwners.Human;
+        //    //    return true;
+        //    //}
+
+
+
+        //    ////first diagonal
+        //    //if ((IdentifyCellOwner(0, 0) == CellOwners.Human) &&
+        //    //   (IdentifyCellOwner(1, 1) == CellOwners.Human) &&
+        //    //   (IdentifyCellOwner(2, 2) == CellOwners.Human))
+        //    //{
+        //    //    Winner = CellOwners.Human;
+        //    //    return true;
+        //    //}
+
+        //    ////second diagonal
+        //    //if ((IdentifyCellOwner(0, 2) == CellOwners.Human) &&
+        //    //   (IdentifyCellOwner(1, 1) == CellOwners.Human) &&
+        //    //   (IdentifyCellOwner(2, 0) == CellOwners.Human))
+        //    //{
+        //    //    Winner = CellOwners.Human;
+        //    //    return true;
+        //    //}
+        //    #endregion
+
+        //    #region Computer
+        //    ////first row
+        //    //if ((IdentifyCellOwner(0, 0) == CellOwners.Computer) &&
+        //    //   (IdentifyCellOwner(0, 1) == CellOwners.Computer) &&
+        //    //   (IdentifyCellOwner(0, 2) == CellOwners.Computer))
+        //    //{
+        //    //    Winner = CellOwners.Computer;
+        //    //    return true;
+        //    //}
+
+        //    ////second row
+        //    //if ((IdentifyCellOwner(1, 0) == CellOwners.Computer) &&
+        //    //   (IdentifyCellOwner(1, 1) == CellOwners.Computer) &&
+        //    //   (IdentifyCellOwner(1, 2) == CellOwners.Computer))
+        //    //{
+        //    //    Winner = CellOwners.Computer;
+        //    //    return true;
+        //    //}
+
+        //    ////third row
+        //    //if ((IdentifyCellOwner(2, 0) == CellOwners.Computer) &&
+        //    //   (IdentifyCellOwner(2, 1) == CellOwners.Computer) &&
+        //    //   (IdentifyCellOwner(2, 2) == CellOwners.Computer))
+        //    //{
+        //    //    Winner = CellOwners.Computer;
+        //    //    return true;
+        //    //}
+
+
+
+        //    ////first column
+        //    //if ((IdentifyCellOwner(0, 0) == CellOwners.Computer) &&
+        //    //   (IdentifyCellOwner(1, 0) == CellOwners.Computer) &&
+        //    //   (IdentifyCellOwner(2, 0) == CellOwners.Computer))
+        //    //{
+        //    //    Winner = CellOwners.Computer;
+        //    //    return true;
+        //    //}
+
+        //    ////second column 
+        //    //if ((IdentifyCellOwner(0, 1) == CellOwners.Computer) &&
+        //    //   (IdentifyCellOwner(1, 1) == CellOwners.Computer) &&
+        //    //   (IdentifyCellOwner(2, 1) == CellOwners.Computer))
+        //    //{
+        //    //    Winner = CellOwners.Computer;
+        //    //    return true;
+        //    //}
+
+        //    ////third column
+        //    //if ((IdentifyCellOwner(0, 2) == CellOwners.Computer) &&
+        //    //   (IdentifyCellOwner(1, 2) == CellOwners.Computer) &&
+        //    //   (IdentifyCellOwner(2, 2) == CellOwners.Computer))
+        //    //{
+        //    //    Winner = CellOwners.Computer;
+        //    //    return true;
+        //    //}
+
+
+
+        //    ////first diagonal
+        //    //if ((IdentifyCellOwner(0, 0) == CellOwners.Computer) &&
+        //    //   (IdentifyCellOwner(1, 1) == CellOwners.Computer) &&
+        //    //   (IdentifyCellOwner(2, 2) == CellOwners.Computer))
+        //    //{
+        //    //    Winner = CellOwners.Computer;
+        //    //    return true;
+        //    //}
+
+        //    ////second diagonal
+        //    //if ((IdentifyCellOwner(0, 2) == CellOwners.Computer) &&
+        //    //   (IdentifyCellOwner(1, 1) == CellOwners.Computer) &&
+        //    //   (IdentifyCellOwner(2, 0) == CellOwners.Computer))
+        //    //{
+        //    //    Winner = CellOwners.Computer;
+        //    //    return true;
+        //    //}
+        //    #endregion
+
+        //    if (_winningCombinations != null)
+        //    {
+        //        foreach (var combination in _winningCombinations)
+        //        {
+        //            var firstCell = combination[0];
+
+        //            if ((firstCell.CellOwner != CellOwners.Computer) &&
+        //                (firstCell.CellOwner != CellOwners.Human)) continue;
+
+        //            bool noMatch = false;
+
+        //            for (int i = 1; i < combination.Count; i++)
+        //            {
+        //                if (firstCell.CellOwner != combination[i].CellOwner)
+        //                {
+        //                    noMatch = true;
+        //                    break;
+        //                }
+        //            }
+
+        //            if (noMatch == true) continue;
+
+        //            //if ((firstCell.CellOwner != combination[1].CellOwner) ||
+        //                //(firstCell.CellOwner != combination[2].CellOwner)) continue;
+
+        //            Winner = firstCell.CellOwner;
+
+        //            return true;
+        //        }
+        //    }
+
+        //    return false;
+        //}
+
         public bool CheckForWinner()
         {
-
-            #region Human
-            ////first row
-            //if ((IdentifyCellOwner(0, 0) == CellOwners.Human) &&
-            //   (IdentifyCellOwner(0, 1) == CellOwners.Human) &&
-            //   (IdentifyCellOwner(0, 2) == CellOwners.Human))
-            //{
-            //    Winner = CellOwners.Human;
-            //    return true;
-            //}
-
-            ////second row
-            //if ((IdentifyCellOwner(1, 0) == CellOwners.Human) &&
-            //   (IdentifyCellOwner(1, 1) == CellOwners.Human) &&
-            //   (IdentifyCellOwner(1, 2) == CellOwners.Human))
-            //{
-            //    Winner = CellOwners.Human;
-            //    return true;
-            //}
-
-            ////third row
-            //if ((IdentifyCellOwner(2, 0) == CellOwners.Human) &&
-            //   (IdentifyCellOwner(2, 1) == CellOwners.Human) &&
-            //   (IdentifyCellOwner(2, 2) == CellOwners.Human))
-            //{
-            //    Winner = CellOwners.Human;
-            //    return true;
-            //}
-
-
-
-            ////first column
-            //if ((IdentifyCellOwner(0, 0) == CellOwners.Human) &&
-            //   (IdentifyCellOwner(1, 0) == CellOwners.Human) &&
-            //   (IdentifyCellOwner(2, 0) == CellOwners.Human))
-            //{
-            //    Winner = CellOwners.Human;
-            //    return true;
-            //}
-
-            ////second column 
-            //if ((IdentifyCellOwner(0, 1) == CellOwners.Human) &&
-            //   (IdentifyCellOwner(1, 1) == CellOwners.Human) &&
-            //   (IdentifyCellOwner(2, 1) == CellOwners.Human))
-            //{
-            //    Winner = CellOwners.Human;
-            //    return true;
-            //}
-
-            ////third column
-            //if ((IdentifyCellOwner(0, 2) == CellOwners.Human) &&
-            //   (IdentifyCellOwner(1, 2) == CellOwners.Human) &&
-            //   (IdentifyCellOwner(2, 2) == CellOwners.Human))
-            //{
-            //    Winner = CellOwners.Human;
-            //    return true;
-            //}
-
-
-
-            ////first diagonal
-            //if ((IdentifyCellOwner(0, 0) == CellOwners.Human) &&
-            //   (IdentifyCellOwner(1, 1) == CellOwners.Human) &&
-            //   (IdentifyCellOwner(2, 2) == CellOwners.Human))
-            //{
-            //    Winner = CellOwners.Human;
-            //    return true;
-            //}
-
-            ////second diagonal
-            //if ((IdentifyCellOwner(0, 2) == CellOwners.Human) &&
-            //   (IdentifyCellOwner(1, 1) == CellOwners.Human) &&
-            //   (IdentifyCellOwner(2, 0) == CellOwners.Human))
-            //{
-            //    Winner = CellOwners.Human;
-            //    return true;
-            //}
-            #endregion
-
-            #region Computer
-            ////first row
-            //if ((IdentifyCellOwner(0, 0) == CellOwners.Computer) &&
-            //   (IdentifyCellOwner(0, 1) == CellOwners.Computer) &&
-            //   (IdentifyCellOwner(0, 2) == CellOwners.Computer))
-            //{
-            //    Winner = CellOwners.Computer;
-            //    return true;
-            //}
-
-            ////second row
-            //if ((IdentifyCellOwner(1, 0) == CellOwners.Computer) &&
-            //   (IdentifyCellOwner(1, 1) == CellOwners.Computer) &&
-            //   (IdentifyCellOwner(1, 2) == CellOwners.Computer))
-            //{
-            //    Winner = CellOwners.Computer;
-            //    return true;
-            //}
-
-            ////third row
-            //if ((IdentifyCellOwner(2, 0) == CellOwners.Computer) &&
-            //   (IdentifyCellOwner(2, 1) == CellOwners.Computer) &&
-            //   (IdentifyCellOwner(2, 2) == CellOwners.Computer))
-            //{
-            //    Winner = CellOwners.Computer;
-            //    return true;
-            //}
-
-
-
-            ////first column
-            //if ((IdentifyCellOwner(0, 0) == CellOwners.Computer) &&
-            //   (IdentifyCellOwner(1, 0) == CellOwners.Computer) &&
-            //   (IdentifyCellOwner(2, 0) == CellOwners.Computer))
-            //{
-            //    Winner = CellOwners.Computer;
-            //    return true;
-            //}
-
-            ////second column 
-            //if ((IdentifyCellOwner(0, 1) == CellOwners.Computer) &&
-            //   (IdentifyCellOwner(1, 1) == CellOwners.Computer) &&
-            //   (IdentifyCellOwner(2, 1) == CellOwners.Computer))
-            //{
-            //    Winner = CellOwners.Computer;
-            //    return true;
-            //}
-
-            ////third column
-            //if ((IdentifyCellOwner(0, 2) == CellOwners.Computer) &&
-            //   (IdentifyCellOwner(1, 2) == CellOwners.Computer) &&
-            //   (IdentifyCellOwner(2, 2) == CellOwners.Computer))
-            //{
-            //    Winner = CellOwners.Computer;
-            //    return true;
-            //}
-
-
-
-            ////first diagonal
-            //if ((IdentifyCellOwner(0, 0) == CellOwners.Computer) &&
-            //   (IdentifyCellOwner(1, 1) == CellOwners.Computer) &&
-            //   (IdentifyCellOwner(2, 2) == CellOwners.Computer))
-            //{
-            //    Winner = CellOwners.Computer;
-            //    return true;
-            //}
-
-            ////second diagonal
-            //if ((IdentifyCellOwner(0, 2) == CellOwners.Computer) &&
-            //   (IdentifyCellOwner(1, 1) == CellOwners.Computer) &&
-            //   (IdentifyCellOwner(2, 0) == CellOwners.Computer))
-            //{
-            //    Winner = CellOwners.Computer;
-            //    return true;
-            //}
-            #endregion
-
-            if (_winningCombinations != null)
+            if (_ticTacToeCells.Count == 0)
             {
-                foreach (var combination in _winningCombinations)
+                return false;
+            }
+
+            if (Winner == CellOwners.Computer || Winner == CellOwners.Human)
+            {
+                return true;
+            }
+
+
+            foreach (var combination in _winningCombinations)
+            {
+                CellOwners testOwner;
+
+                testOwner = CellOwners.Computer;
+                if (!combination.Any(tttc => tttc.CellOwner != testOwner))
                 {
-                    var firstCell = combination[0];
-
-                    if ((firstCell.CellOwner != CellOwners.Computer) &&
-                        (firstCell.CellOwner != CellOwners.Human)) continue;
-
-                    bool noMatch = false;
-
-                    for (int i = 1; i < combination.Count; i++)
-                    {
-                        if (firstCell.CellOwner != combination[i].CellOwner)
-                        {
-                            noMatch = true;
-                            break;
-                        }
-                    }
-
-                    if (noMatch == true) continue;
-
-                    //if ((firstCell.CellOwner != combination[1].CellOwner) ||
-                        //(firstCell.CellOwner != combination[2].CellOwner)) continue;
-
-                    Winner = firstCell.CellOwner;
-
+                    Winner = testOwner;
                     return true;
                 }
-            }
+
+                testOwner = CellOwners.Human;
+                if (!combination.Any(tttc => tttc.CellOwner != testOwner))
+                {
+                    Winner = testOwner;
+                    return true;
+                }
+            };
+
+            Debug.WriteLine($"Method: CheckForWinner {Winner}");
 
             return false;
         }
